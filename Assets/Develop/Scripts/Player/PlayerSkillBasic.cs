@@ -19,15 +19,17 @@ namespace CreatureGrove
         // 구르기 (최대)거리
         private float tumbleDistanceMax = 4f;
 
-        // 구르기 속도? (거리당 시간)
-        private float tumbleTimeOrSpeed = 2f;
+        // 지금까지 구른 거리
+        private float currentTumbleDistance = 0f;
 
-        // 지금까지 구른 시간
-        private float currentTumbleTime = 0f;
+        // 구르기 속도 (Lerp : 0-1사이)
+        private float tumbleSpeed = 2f;
 
-        // 구르는중인가?
+        // 구르는중인가? 구르는 중 + 쿨타임엔 구르기가 안되야함
         private bool isTumble;
 
+        private Vector3 tumbleDir;
+        
         void Awake()
         {
             // [jump] 초기화
@@ -37,36 +39,34 @@ namespace CreatureGrove
 
         void Update()
         {
-            Tumble();
-
             if (isTumble)
             {
+                //구르기
+                Tumble();
 
-                //if (transform.position == )
+                // 현재 구른 거리가 최대 거리와 같다면? (예외 : 오브젝트 충돌)
+                if (currentTumbleDistance >= tumbleDistanceMax - (0.01f)) // lerp사용을 위한 범위확대
                 {
                     isTumble = false;
+                    currentTumbleDistance = 0f;
                 }
             }
         }
 
         void Tumble()
         {
-            //구르는 거리가 최대거리보다 작아야하고, 작게 구르면 시간도 짧아져야하고, 구르는 중 + 쿨타임엔 구르기가 안되야함
-            //
-
-
-
-
-            //Vector3 newPosition =  
-            //transform.position = newPosition;
+            transform.position = Vector3.Lerp(transform.position,tumbleDir, tumbleSpeed);
         }
 
         void OnTumble(InputValue value)
         {
             if (isTumble == false)
             {
-                //targetPoint = Input.mousePosition; Camera.main.ScreenToWorldPoint(pos);
                 isTumble = true;
+
+                // 구르기 방향구하기(단위벡터 * 최대거리)
+                tumbleDir = Camera.main.ScreenToWorldPoint(tumbleTarget) - this.transform.position;
+                tumbleDir = tumbleDir.normalized * tumbleDistanceMax;
             }
         }
 
@@ -79,10 +79,17 @@ namespace CreatureGrove
             }
         }
 
-
-        // 목표 지점까지의 방향 : "현재 위치 - 목표 지점"
-        private Vector3 tumbleDir;
-        //  tumbleDir = transform.position - tumbleTarget;
+        // 구르기중 "오브젝트에 부딪힌다"면 움직임을 제한 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (isTumble)
+            {
+                if (collision.gameObject.tag == "오브젝트")
+                {
+                    currentTumbleDistance = tumbleDistanceMax;
+                }
+            }
+        }
     }
 
 }
