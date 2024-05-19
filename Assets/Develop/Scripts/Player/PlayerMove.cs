@@ -5,12 +5,22 @@ namespace CreatureGrove
 {
     public class PlayerMove : MonoBehaviour
     {
+        // 참조
+        private Rigidbody rb;
+
+        // 캐릭터가 바닥에 있을때의 높이값
+        private float playerPosY;
+
+        // 이동 및 회전 방향
         private Vector3 dir;
-        [SerializeField] private float moveSpeed = 3;
-        [SerializeField] private float rotSmoothness = 7;
+        [SerializeField] private float moveSpeed = 6;
+        [SerializeField] private float rotSmoothness = 12;
 
         void Awake()
         {
+            // [jump] 초기화
+            rb = GetComponent<Rigidbody>();
+            playerPosY = transform.position.y;
         }
 
         void Update()
@@ -29,8 +39,6 @@ namespace CreatureGrove
                 transform.rotation = Quaternion.Lerp(transform.rotation, tmpQ, Time.deltaTime * rotSmoothness);
                 //transform.eulerAngles = new Vector3(0, Mathf.Atan2(tmp.x, tmp.z) * Mathf.Atan2(tmp.x, tmp.z) * Mathf.Rad2Deg,0);
 
-                // 점프
-
             }
             else
             {
@@ -43,6 +51,15 @@ namespace CreatureGrove
             {
                 Vector2 tmp = value.Get<Vector2>();
                 dir = new Vector3(tmp.x, 0, tmp.y);
+            }
+        }
+
+        void OnJump()
+        {
+            // 최초 y좌표 (+오차범위) 일때만 점프 가능
+            if (transform.position.y < (playerPosY + 0.01))
+            {
+                rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
             }
         }
     }
