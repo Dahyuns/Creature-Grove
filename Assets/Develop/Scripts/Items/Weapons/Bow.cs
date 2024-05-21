@@ -6,6 +6,11 @@ namespace CreatureGrove
     {
         void Awake()
         {
+            ResetGame();
+        }
+
+        void ResetGame()
+        {
             //√ ±‚»≠
             atkPower = 100f;
             atkSpeed = 2f;
