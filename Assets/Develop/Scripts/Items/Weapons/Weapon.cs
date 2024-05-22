@@ -3,7 +3,7 @@ using UnityEngine;
 namespace CreatureGrove
 {
     public enum WeaponType 
-    { Gun, Bow } //Sword, Wand
+    { Gun, Bow } // Sword, Wand...
 
     public class Weapon : MonoBehaviour
     {
@@ -34,8 +34,37 @@ namespace CreatureGrove
             }
         }
 
+        // 참조
+        private GameObject bullet;
+        private GameObject bEffect;
+
+        private void Awake()
+        {
+            //플레이어의 무기 타입에 따라 총알(모델) 설정
+            if (Player.WeaponType == WeaponType.Gun)
+            {
+                bullet = GameObject.Find("Gun_Bullet");
+                bEffect = GameObject.Find("");
+            }
+            else if (Player.WeaponType == WeaponType.Bow)
+            {
+                bullet = GameObject.Find("Bow_Bullet");
+                bEffect = GameObject.Find("");
+            }
+        }
+
+        RaycastHit hit;
+        private float MaxDistance = 15f;
+
         // 발사체 발사
-        public virtual void fireProjectile() { }
+        public void fireProjectile() 
+        { 
+            // 활 : (약한)포물선, 총 : 일직선
+            if (Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
+            {
+                hit.transform.GetComponent<MeshRenderer>().material.color = Color.red;
+            }
+        }
 
         #region 레벨업함수
         public void LevelUp()
