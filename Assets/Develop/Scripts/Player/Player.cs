@@ -10,14 +10,11 @@ namespace CreatureGrove
         private float currentWeight;
         private float stamina;
 
-        private void Attack()
-        {
+        // Attack은 Weapon으로만 가능
 
-        }
-
-        private void Damaged(string enemy)
+        public void TakeDamage(float enemyAtk)
         {
-            //hp = hp - enemy.atkPower;
+            hp -= enemyAtk;
         }
     }
 }

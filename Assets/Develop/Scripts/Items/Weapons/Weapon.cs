@@ -66,6 +66,16 @@ namespace CreatureGrove
             }
         }
 
+        //enemy
+        private void OnCollisionEnter(Collision collision)
+        {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(effectiveAtkPower());
+            }
+        }
+
         #region 레벨업함수
         public void LevelUp()
         {
