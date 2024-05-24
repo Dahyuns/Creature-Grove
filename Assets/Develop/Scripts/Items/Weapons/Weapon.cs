@@ -41,15 +41,21 @@ namespace CreatureGrove
         private void Awake()
         {
             //플레이어의 무기 타입에 따라 총알(모델) 설정
-            if (Player.WeaponType == WeaponType.Gun)
+            switch (Player.WeaponType)
             {
-                bullet = GameObject.Find("Gun_Bullet");
-                bEffect = GameObject.Find("");
-            }
-            else if (Player.WeaponType == WeaponType.Bow)
-            {
-                bullet = GameObject.Find("Bow_Bullet");
-                bEffect = GameObject.Find("");
+                case WeaponType.Gun:
+                    bullet = GameObject.Find("Gun_Bullet");
+                    bEffect = GameObject.Find("");
+                    break;
+
+                case WeaponType.Bow:
+                    bullet = GameObject.Find("Bow_Bullet");
+                    bEffect = GameObject.Find("");
+                    break;
+                
+                default:
+                    Debug.Log("WeaponType이 없음");
+                    break;
             }
         }
 
@@ -65,16 +71,7 @@ namespace CreatureGrove
                 hit.transform.GetComponent<MeshRenderer>().material.color = Color.red;
             }
         }
-
-        //enemy
-        private void OnCollisionEnter(Collision collision)
-        {
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(effectiveAtkPower());
-            }
-        }
+                
 
         #region 레벨업함수
         public void LevelUp()

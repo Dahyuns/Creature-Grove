@@ -1,51 +1,51 @@
-using CreatureGrove;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace CreatureGrove
 {
-    // 체력
-    private float hp;
-
-    // 공격력
-    private float atkPower;
-
-    // 공격속도
-    private float atkSpeed;
-
-    // 참조
-    private GameObject thePlayer;
-
-    private void Awake()
+    public class Enemy : MonoBehaviour
     {
-        thePlayer = GameObject.Find("Player");
-    }
+        // 체력
+        private float hp;
 
-    void Attack()
-    {
-        //데미지 주기
-        Player player = thePlayer.GetComponent<Player>();
-        if (player != null)
+        // 공격력
+        private float atkPower;
+
+        // 공격속도
+        private float atkSpeed;
+
+        // 참조
+        private GameObject thePlayer;
+
+        private void Awake()
         {
-            player.TakeDamage(atkPower);
+            thePlayer = GameObject.Find("Player");
         }
-    }
 
-    public void TakeDamage(float playerAtk)
-    {
-        hp -= playerAtk;
-
-        if (hp < 0)
+        void Attack()
         {
-            Die();
+            //데미지 주기
+            Player player = thePlayer.GetComponent<Player>();
+            if (player != null)
+            {
+                player.TakeDamage(atkPower);
+            }
         }
-    }
 
-    private void Die()
-    {
-        // 죽는 애니메이션 재생
-        // isDead = true;
-        // update 첫줄에 리턴?
+        public void TakeDamage(float playerAtk)
+        {
+            hp -= playerAtk;
+
+            if (hp < 0)
+            {
+                Die();
+            }
+        }
+
+        private void Die()
+        {
+            // 죽는 애니메이션 재생
+            // isDead = true;
+            // update 첫줄에 리턴?
+        }
     }
 }
