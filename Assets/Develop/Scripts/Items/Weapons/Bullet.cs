@@ -10,7 +10,7 @@ namespace CreatureGrove
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(effectiveAtkPower());
+               // enemy.TakeDamage(Gun.effectiveAtkPower());
             }
         }
     }
