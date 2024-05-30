@@ -23,7 +23,27 @@ namespace CreatureGrove
         private bool isTumble;
 
         private Vector3 tumbleDir;
-        
+
+        private Gun gun;
+        private Bow bow;
+
+        private void Awake()
+        {
+            switch (Player.WeaponType)
+            {
+                case WeaponType.Gun:
+                    gun = this.gameObject.GetComponent<Player>().Thisweapon.GetComponent<Gun>();
+                    break;
+
+                case WeaponType.Bow:
+                    bow = this.gameObject.GetComponent<Player>().Thisweapon.GetComponent<Bow>();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
         void Update()
         {
             if (isTumble)
@@ -68,7 +88,19 @@ namespace CreatureGrove
 
         void OnFire(InputValue value)
         {
+            switch (Player.WeaponType)
+            {
+                case WeaponType.Gun:
+                    gun.fireProjectile();
+                    break;
 
+                case WeaponType.Bow:
+                    bow.fireProjectile();
+                    break;
+
+                default:
+                    break;
+            }
         }
 
 

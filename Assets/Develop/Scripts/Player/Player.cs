@@ -9,6 +9,10 @@ namespace CreatureGrove
         [SerializeField] private GameObject BowPrefab;
 
         private GameObject thisWeapon;
+        public GameObject Thisweapon
+        {
+            get { return Thisweapon; }
+        }
 
         private static WeaponType weaponType;
         public static WeaponType WeaponType { get { return weaponType; } }
@@ -19,6 +23,7 @@ namespace CreatureGrove
 
         private void Awake()
         {
+            // 임시 설정
             weaponType = WeaponType.Bow;
             switch (weaponType)
             {
