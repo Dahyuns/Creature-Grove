@@ -17,10 +17,5 @@ namespace CreatureGrove
             criticalRate = 50f; // 50%추가적용
             critHitProb = 30f;
         }
-
-        void Update()
-        {
-            fireProjectile();
-        }
     }
 }

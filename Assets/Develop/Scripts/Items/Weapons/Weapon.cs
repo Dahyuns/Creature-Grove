@@ -41,7 +41,7 @@ namespace CreatureGrove
         private void Awake()
         {
             //플레이어의 무기 타입에 따라 총알(모델) 설정
-            switch (Player.WeaponType)
+            switch (GetComponent<Player>().WeaponType)
             {
                 case WeaponType.Gun:
                     bullet = GameObject.Find("Gun_Bullet");
@@ -64,12 +64,20 @@ namespace CreatureGrove
 
         // 발사체 발사
         public void fireProjectile() 
-        { 
+        {
+
+            GameObject blt = Instantiate(bullet);
+
+            Debug.Log("발사");
+
+            blt?.transform.Translate(Vector3.forward);
+            Destroy(bullet,2f);
+
             // 활 : (약한)포물선, 총 : 일직선
-            if (Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
-            {
-                hit.transform.GetComponent<MeshRenderer>().material.color = Color.red;
-            }
+            //if (Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
+            //{
+            //    hit.transform.GetComponent<MeshRenderer>().material.color = Color.red;
+            //}
         }
                 
 

@@ -27,16 +27,18 @@ namespace CreatureGrove
         private Gun gun;
         private Bow bow;
 
-        private void Awake()
+        private void Start()
         {
-            switch (Player.WeaponType)
+            switch (GetComponent<Player>().WeaponType)
             {
                 case WeaponType.Gun:
-                    gun = this.gameObject.GetComponent<Player>().Thisweapon.GetComponent<Gun>();
+                    Debug.Log(GetComponent<Player>().WeaponType);
+                    gun = GetComponent<Player>().Thisweapon.GetComponent<Gun>();
                     break;
 
                 case WeaponType.Bow:
-                    bow = this.gameObject.GetComponent<Player>().Thisweapon.GetComponent<Bow>();
+                    Debug.Log(GetComponent<Player>().WeaponType);
+                    bow = GetComponent<Player>().Thisweapon.GetComponent<Bow>();
                     break;
 
                 default:
@@ -88,7 +90,7 @@ namespace CreatureGrove
 
         void OnFire(InputValue value)
         {
-            switch (Player.WeaponType)
+            switch (GetComponent<Player>().WeaponType)
             {
                 case WeaponType.Gun:
                     gun.fireProjectile();

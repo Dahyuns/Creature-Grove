@@ -11,11 +11,12 @@ namespace CreatureGrove
         private GameObject thisWeapon;
         public GameObject Thisweapon
         {
-            get { return Thisweapon; }
+            get { return thisWeapon; }
         }
 
-        private static WeaponType weaponType;
-        public static WeaponType WeaponType { get { return weaponType; } }
+        private WeaponType weaponType;
+        public WeaponType WeaponType { get { return weaponType; } }
+
         private float hp;
         private float currentWeight;
         private float stamina;
