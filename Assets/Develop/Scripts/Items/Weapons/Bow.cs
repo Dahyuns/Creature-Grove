@@ -4,10 +4,8 @@ namespace CreatureGrove
 {
     public class Bow : Weapon
     {
-        void Awake()
-        {
-            ResetGame();
-        }
+        [SerializeField] private GameObject thisBullet;
+        [SerializeField] private GameObject thisEffect;
 
         void ResetGame()
         {
@@ -16,6 +14,18 @@ namespace CreatureGrove
             atkSpeed = 2f;
             criticalRate = 50f; // 50%추가적용
             critHitProb = 30f;
+        }
+
+
+        protected override void Start()
+        {
+            base.Start();
+
+            base.bullet = thisBullet;
+            base.bEffect = thisEffect;
+
+
+            ResetGame();
         }
     }
 }

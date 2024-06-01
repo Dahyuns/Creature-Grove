@@ -4,6 +4,10 @@ namespace CreatureGrove
 {
     public class Bullet : MonoBehaviour
     {
+        private void Awake()
+        {
+            Destroy(gameObject, 10f);    
+        }
 
         private void OnCollisionEnter(Collision collision)
         {

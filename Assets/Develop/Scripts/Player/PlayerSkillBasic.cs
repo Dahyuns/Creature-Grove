@@ -24,20 +24,25 @@ namespace CreatureGrove
 
         private Vector3 tumbleDir;
 
+        private Vector3 firePoint;
+
         private Gun gun;
         private Bow bow;
 
+        private WeaponType weaponType;
+
+
         private void Start()
         {
-            switch (GetComponent<Player>().WeaponType)
+            weaponType = GetComponent<Player>().WeaponType;
+
+            switch (weaponType)
             {
                 case WeaponType.Gun:
-                    Debug.Log(GetComponent<Player>().WeaponType);
                     gun = GetComponent<Player>().Thisweapon.GetComponent<Gun>();
                     break;
 
                 case WeaponType.Bow:
-                    Debug.Log(GetComponent<Player>().WeaponType);
                     bow = GetComponent<Player>().Thisweapon.GetComponent<Bow>();
                     break;
 
@@ -48,6 +53,8 @@ namespace CreatureGrove
 
         void Update()
         {
+            firePoint = GameObject.Find("FirePoint").transform.position;
+
             if (isTumble)
             {
                 // ±¸¸£±â
@@ -93,11 +100,11 @@ namespace CreatureGrove
             switch (GetComponent<Player>().WeaponType)
             {
                 case WeaponType.Gun:
-                    gun.fireProjectile();
+                    gun.fireProjectile(firePoint);
                     break;
 
                 case WeaponType.Bow:
-                    bow.fireProjectile();
+                    bow.fireProjectile(firePoint);
                     break;
 
                 default:

@@ -14,7 +14,7 @@ namespace CreatureGrove
             get { return thisWeapon; }
         }
 
-        private WeaponType weaponType;
+        private WeaponType weaponType = WeaponType.Bow;
         public WeaponType WeaponType { get { return weaponType; } }
 
         private float hp;
@@ -24,8 +24,6 @@ namespace CreatureGrove
 
         private void Awake()
         {
-            // 임시 설정
-            weaponType = WeaponType.Bow;
             switch (weaponType)
             {
                 case WeaponType.Gun:
@@ -36,7 +34,6 @@ namespace CreatureGrove
                     thisWeapon = Instantiate(BowPrefab, transform);
                     break;
             }
-            Debug.Log(thisWeapon);
         }
 
 

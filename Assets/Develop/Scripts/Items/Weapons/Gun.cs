@@ -4,10 +4,8 @@ namespace CreatureGrove
 {
     public class Gun : Weapon
     {
-        void Awake()
-        {
-            ResetGame();
-        }
+        [SerializeField] private GameObject thisBullet;
+        [SerializeField] private GameObject thisEffect;
 
         void ResetGame()
         {
@@ -18,5 +16,15 @@ namespace CreatureGrove
             critHitProb = 70f;
         }
 
+
+        protected override void Start()
+        {
+            base.Start();
+
+            base.bullet = thisBullet;
+            base.bEffect = thisEffect;
+
+            ResetGame();
+        }
     }
 }

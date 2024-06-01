@@ -35,43 +35,39 @@ namespace CreatureGrove
         }
 
         // 참조
-        private GameObject bullet;
-        private GameObject bEffect;
+        protected GameObject bullet;
+        protected GameObject bEffect;
 
-        private void Awake()
+
+        protected virtual void Start()
         {
-            //플레이어의 무기 타입에 따라 총알(모델) 설정
-            switch (GetComponent<Player>().WeaponType)
-            {
-                case WeaponType.Gun:
-                    bullet = GameObject.Find("Gun_Bullet");
-                    bEffect = GameObject.Find("");
-                    break;
-
-                case WeaponType.Bow:
-                    bullet = GameObject.Find("Bow_Bullet");
-                    bEffect = GameObject.Find("");
-                    break;
-                
-                default:
-                    Debug.Log("WeaponType이 없음");
-                    break;
-            }
+           //// 플레이어의 무기 타입에 따라 총알(모델) 설정
+           //switch (transform.parent.GetComponent<Player>().WeaponType)
+           //{
+           //    case WeaponType.Gun:
+           //        bullet = GameObject.Find("Gun_Bullet");
+           //        bEffect = GameObject.Find("");
+           //        break;
+           //
+           //    case WeaponType.Bow:
+           //        bullet = GameObject.Find("Bow_Bullet");
+           //        bEffect = GameObject.Find("");
+           //        break;
+           //}
         }
 
-        RaycastHit hit;
-        private float MaxDistance = 15f;
+        protected RaycastHit hit;
+        //private float MaxDistance = 15f;
 
         // 발사체 발사
-        public void fireProjectile() 
+        public void fireProjectile(Vector3 transform) 
         {
 
-            GameObject blt = Instantiate(bullet);
+            GameObject blt = Instantiate(bullet, transform, Quaternion.Euler(transform));
 
             Debug.Log("발사");
 
             blt?.transform.Translate(Vector3.forward);
-            Destroy(bullet,2f);
 
             // 활 : (약한)포물선, 총 : 일직선
             //if (Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
