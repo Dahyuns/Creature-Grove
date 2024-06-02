@@ -53,8 +53,6 @@ namespace CreatureGrove
 
         void Update()
         {
-            firePoint = GameObject.Find("FirePoint").transform.position;
-
             if (isTumble)
             {
                 // ±¸¸£±â
@@ -100,11 +98,11 @@ namespace CreatureGrove
             switch (GetComponent<Player>().WeaponType)
             {
                 case WeaponType.Gun:
-                    gun.fireProjectile(firePoint);
+                    gun.fireProjectile(GameObject.Find("FirePoint").transform.position);
                     break;
 
                 case WeaponType.Bow:
-                    bow.fireProjectile(firePoint);
+                    bow.fireProjectile(GameObject.Find("FirePoint").transform.position);
                     break;
 
                 default:

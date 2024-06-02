@@ -38,36 +38,47 @@ namespace CreatureGrove
         protected GameObject bullet;
         protected GameObject bEffect;
 
+        protected Transform firePoint;
+
 
         protected virtual void Start()
         {
-           //// 플레이어의 무기 타입에 따라 총알(모델) 설정
-           //switch (transform.parent.GetComponent<Player>().WeaponType)
-           //{
-           //    case WeaponType.Gun:
-           //        bullet = GameObject.Find("Gun_Bullet");
-           //        bEffect = GameObject.Find("");
-           //        break;
-           //
-           //    case WeaponType.Bow:
-           //        bullet = GameObject.Find("Bow_Bullet");
-           //        bEffect = GameObject.Find("");
-           //        break;
-           //}
+            firePoint = GameObject.Find("FirePoint").transform;
+           /*// 플레이어의 무기 타입에 따라 총알(모델) 설정
+                switch (transform.parent.GetComponent<Player>().WeaponType)
+                {
+                    case WeaponType.Gun:
+                        bullet = GameObject.Find("Gun_Bullet");
+                        bEffect = GameObject.Find("");
+                        break;
+                
+                    case WeaponType.Bow:
+                        bullet = GameObject.Find("Bow_Bullet");
+                        bEffect = GameObject.Find("");
+                        break;
+                }*/
         }
 
         protected RaycastHit hit;
         //private float MaxDistance = 15f;
 
         // 발사체 발사
-        public void fireProjectile(Vector3 transform) 
+        public void fireProjectile(Vector3 Point) 
         {
+            GameObject blt = Instantiate(bullet, firePoint);
 
-            GameObject blt = Instantiate(bullet, transform, Quaternion.Euler(transform));
+            if (blt != null)
+            {
+                Debug.Log("발사");
+                // 플레이어의 앞쪽으로 쭉 이동
+                // 플레이어 dir, firePoint 위치
+                blt.GetComponent<Bullet>().SetDir(transform.forward.normalized,Point);
+            }
+            else
+            {
+                Debug.Log("총알없음");
+            }
 
-            Debug.Log("발사");
-
-            blt?.transform.Translate(Vector3.forward);
 
             // 활 : (약한)포물선, 총 : 일직선
             //if (Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
