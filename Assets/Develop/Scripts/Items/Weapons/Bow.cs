@@ -24,7 +24,6 @@ namespace CreatureGrove
             base.bullet = thisBullet;
             base.bEffect = thisEffect;
 
-
             ResetGame();
         }
     }

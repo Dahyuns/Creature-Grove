@@ -98,11 +98,11 @@ namespace CreatureGrove
             switch (GetComponent<Player>().WeaponType)
             {
                 case WeaponType.Gun:
-                    gun.fireProjectile(GameObject.Find("FirePoint").transform.position);
+                    gun.fireProjectile();
                     break;
 
                 case WeaponType.Bow:
-                    bow.fireProjectile(GameObject.Find("FirePoint").transform.position);
+                    bow.fireProjectile();
                     break;
 
                 default:

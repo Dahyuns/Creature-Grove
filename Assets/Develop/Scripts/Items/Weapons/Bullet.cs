@@ -5,13 +5,12 @@ namespace CreatureGrove
     public class Bullet : MonoBehaviour
     {
         private Vector3 dir;
-        private Vector3 firePoint;
-        private bool isSet;
+        private bool isSet = false;
 
-        public void SetDir(Vector3 dirIn, Vector3 fpIn)
+        public void SetDir(Vector3 dirIn)
         {
             dir = dirIn;
-            firePoint = fpIn;
+            transform.position = GameObject.Find("FirePoint").transform.position;
             isSet = true;
         }
 
@@ -24,14 +23,14 @@ namespace CreatureGrove
         {
             if (isSet)
             {
-                transform.Translate(dir);
+                transform.Translate(dir*0.1f,Space.World);
             }
         }
 
         private void OnTriggerEnter(Collider other)
         {
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            if (enemy == null)
+            if (enemy != null)
             {
                 Debug.Log("적 데미지");
                // enemy.TakeDamage(Gun.effectiveAtkPower());

@@ -44,35 +44,23 @@ namespace CreatureGrove
         protected virtual void Start()
         {
             firePoint = GameObject.Find("FirePoint").transform;
-           /*// 플레이어의 무기 타입에 따라 총알(모델) 설정
-                switch (transform.parent.GetComponent<Player>().WeaponType)
-                {
-                    case WeaponType.Gun:
-                        bullet = GameObject.Find("Gun_Bullet");
-                        bEffect = GameObject.Find("");
-                        break;
-                
-                    case WeaponType.Bow:
-                        bullet = GameObject.Find("Bow_Bullet");
-                        bEffect = GameObject.Find("");
-                        break;
-                }*/
         }
 
         protected RaycastHit hit;
         //private float MaxDistance = 15f;
 
         // 발사체 발사
-        public void fireProjectile(Vector3 Point) 
+        public void fireProjectile() 
         {
-            GameObject blt = Instantiate(bullet, firePoint);
+            GameObject blt = Instantiate(bullet);
 
             if (blt != null)
             {
                 Debug.Log("발사");
+
                 // 플레이어의 앞쪽으로 쭉 이동
                 // 플레이어 dir, firePoint 위치
-                blt.GetComponent<Bullet>().SetDir(transform.forward.normalized,Point);
+                blt.GetComponent<Bullet>().SetDir(transform.forward.normalized);
             }
             else
             {
