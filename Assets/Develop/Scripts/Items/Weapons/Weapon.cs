@@ -7,6 +7,8 @@ namespace CreatureGrove
 
     public class Weapon : MonoBehaviour
     {
+        // 추가 : 공격력 적용
+
         // 공격력
         protected float atkPower;
 

@@ -4,6 +4,7 @@ namespace CreatureGrove
 {
     public class Bullet : MonoBehaviour
     {
+        // 추가? : 오브젝트 풀링
         private Vector3 dir;
         private bool isSet = false;
 
