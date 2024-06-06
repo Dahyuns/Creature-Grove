@@ -52,6 +52,10 @@ namespace CreatureGrove
 
 
                 case EnemyState.Attack:
+                    // 한번 공격
+
+                    // 다시 search로 전환
+                    currentState = EnemyState.Search;
                     break;
 
 
