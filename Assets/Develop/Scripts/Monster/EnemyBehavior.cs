@@ -33,25 +33,29 @@ namespace CreatureGrove
 
             switch (currentState)
             {
+                // [대기]
                 case EnemyState.Wait:
 
-                    // 플레이어와의 거리가 검색거리보다 적을때 "검색"
+                    // 플레이어와의 거리가 검색거리보다 가까울때 "검색"
                     if (DirToPlayer.magnitude < searchDistance)
                     {
                         currentState = EnemyState.Search;
                     }
+                    // 플레이어와의 거리가 검색거리보다 멀때 "힐"
                     else
                     {
-                        if (GetComponent<Enemy>().HpNow)
+                        // 만약 피가 깎였다면
+                        if (GetComponent<Enemy>().IsMaxHp == false)
                         {
-
+                            currentState = EnemyState.Heal;
                         }
                     }
                     break;
 
 
-
+                // [공격]
                 case EnemyState.Attack:
+
                     // 한번 공격
 
                     // 다시 search로 전환
@@ -60,40 +64,48 @@ namespace CreatureGrove
 
 
 
-
+                // [탐색]
                 case EnemyState.Search:
-                    // 목표를 향해 걸어가다가
                     
-                    // 어느정도 가까워지면 "때리기"로 전환
+                    // 가까워지면 "공격"으로 전환
                     if (DirToPlayer.magnitude < attackDistance)
                     {
+                        if (GetComponent<Enemy>().IsMaxHp == true)
+                        {
+
+                        }
                         currentState = EnemyState.Attack;
                     }
                     else
                     {
-
+                        // 목표를 향해 걷기
                     }
                     break;
 
 
-
-                case EnemyState.Heal: 
-                    break;
-
-
-
+                // [도망] 일반몹 - 체력 일정수준 이하
                 case EnemyState.Run:
 
                     break;
 
 
-
-
+                // [방어] 보스몹 - 체력 일정수준 이하
                 case EnemyState.Defend:
+                    // 방어 태새 갖추기
+
+                    // 방어력 추가 >> Enemy.takeDamage에서 적용됨
+
                     break;
 
 
+                // [치유]
+                case EnemyState.Heal:
+                    // 힐 한번
+                    GetComponent<Enemy>().Heal();
 
+                    // "대기"로 전환
+                    currentState = EnemyState.Wait;
+                    break;
 
 
                 default:

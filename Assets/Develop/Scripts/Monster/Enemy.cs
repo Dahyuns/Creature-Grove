@@ -13,9 +13,11 @@ namespace CreatureGrove
         private float Maxhp;
         private float hp;
 
-        public bool HpNow
+        private float defenseHPThreshold
+
+        public bool IsMaxHp
         {
-            get { return hp < Maxhp; }
+            get { return hp >= Maxhp; }
         }
 
         // °ø°Ý·Â
@@ -49,6 +51,7 @@ namespace CreatureGrove
 
             if (hp < 0)
             {
+                hp = 0;
                 Die();
             }
         }
@@ -62,7 +65,11 @@ namespace CreatureGrove
 
         public void Heal()
         {
-            hp = Maxhp;
+            hp += 10;
+            if (hp > Maxhp)
+            {
+                hp = Maxhp;
+            }
         }
     }
 }
