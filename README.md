@@ -25,18 +25,13 @@ Creature Grove
 |0502 ~ 0608|1차 개발|🔹|
 |0609 ~ 0713|개발지식 공부|🔹|
 |0714|객체지향 공부 이후 전체 재개발시작|🔹|
-|~0716|객체다이어그램 작성|☐|
-|0717||☐|
+|~0716|객체다이어그램 작성|☑|
+|7월 3주|인터페이스 구성|☐|
 
 
 &nbsp;
 
 </details>
 
-### 객체 다이어그램
-<details>
-<summary>OPEN</summary>
-
-
-  
-</details>
+### 다이어그램
+![다이어그램](https://github.com/user-attachments/assets/4a2e30b3-a1d9-45c3-94ec-3fa75972a295)
