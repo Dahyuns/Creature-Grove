@@ -2,6 +2,6 @@ namespace CreatureGrove
 {
     public interface ISaveLoadManager
     {
-        void Save();
+        public void Save();
     }
 }

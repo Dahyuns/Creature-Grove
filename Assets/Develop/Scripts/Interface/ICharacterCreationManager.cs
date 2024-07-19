@@ -8,6 +8,6 @@ namespace CreatureGrove
 
     public interface ICharacterCreationManager
     {
-        void CreatCharacter(CharacterType type);
+        public void CreatCharacter(CharacterType type);
     }
 }

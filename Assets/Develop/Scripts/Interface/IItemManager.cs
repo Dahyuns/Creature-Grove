@@ -3,9 +3,9 @@ namespace CreatureGrove
     public interface IItemManager
     {
         // 아이템을 착용
-        void Equip();
+        public void Equip();
 
         // 아이템을 해제
-        void Unequip();
+        public void Unequip();
     }
 }

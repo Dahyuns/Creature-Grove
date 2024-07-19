@@ -11,6 +11,6 @@ namespace CreatureGrove
 
     public interface IFieldItemManager
     {
-        void PerformAction(FieldAction action);
+        public void PerformAction(FieldAction action);
     }
 }

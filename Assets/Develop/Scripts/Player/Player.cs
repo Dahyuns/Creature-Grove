@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CreatureGrove
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, ICraftingManager, IDamageManager, IFieldItemManager, IItemManager, ISaveLoadManager
     {
         // 참조
         [SerializeField] private GameObject GunPrefab;
@@ -38,9 +38,55 @@ namespace CreatureGrove
 
 
         // Attack은 Weapon으로만 가능
-        public void TakeDamage(float enemyAtk)
+        public void gTakeDamage(float enemyAtk)
         {
             hp -= enemyAtk;
         }
+
+
+        // [ICraftingManager]
+        public void createItem(ItemType type)
+        {
+
+        }
+
+
+        // [IDamageManager]
+        public void Attack(IDamageManager target, float amount)
+        {
+
+        }
+
+        public void TakeDamage(float amount)
+        {
+
+        }
+
+
+        // [IFieldItemManager]
+        public void PerformAction(FieldAction action)
+        {
+
+        }
+
+
+        // [IItemManager]
+        public void Equip()
+        {
+
+        }
+
+        public void Unequip()
+        {
+
+        }
+
+
+        // [ISaveLoadManager]
+        public void Save()
+        {
+
+        }
+
     }
 }

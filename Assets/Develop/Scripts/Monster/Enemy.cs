@@ -13,7 +13,7 @@ namespace CreatureGrove
         private float Maxhp;
         private float hp;
 
-        private float defenseHPThreshold
+        private float defenseHPThreshold;
 
         public bool IsMaxHp
         {
