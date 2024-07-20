@@ -101,7 +101,7 @@ namespace CreatureGrove
                 // [치유]
                 case EnemyState.Heal:
                     // 힐 한번
-                    GetComponent<Enemy>().Heal();
+                    GetComponent<Enemy>().sHeal();
 
                     // "대기"로 전환
                     currentState = EnemyState.Wait;

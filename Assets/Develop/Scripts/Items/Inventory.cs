@@ -1,0 +1,24 @@
+using UnityEngine;
+
+namespace CreatureGrove
+{
+    public class Inventory : MonoBehaviour, IFieldItemManager, IItemManager
+    {
+        // [IFieldItemManager]
+        public void PerformAction(FieldAction action)
+        {
+
+        }
+
+        // [IItemManager]
+        public void Equip()
+        {
+
+        }
+
+        public void Unequip()
+        {
+
+        }
+    }
+}

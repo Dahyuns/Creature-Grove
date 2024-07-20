@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CreatureGrove
 {
-    public class SaveGameManager : MonoBehaviour
+    public class SaveGameManager : MonoBehaviour, ISaveLoadManager
     {
         private static SaveGameManager instance;
         public static SaveGameManager Instance
@@ -33,5 +33,11 @@ namespace CreatureGrove
         // 몬스터 레벨 관련
         private int mWaveLV;
         private int bossLV;
+
+        // [ISaveLoadManager]
+        public void Save()
+        {
+
+        }
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CreatureGrove
 {
-    public class Player : MonoBehaviour, ICraftingManager, IDamageManager, IFieldItemManager, IItemManager, ISaveLoadManager
+    public class Player : MonoBehaviour, ICraftingManager, IDamageManager, IFieldItemManager
     {
         // ÂüÁ¶
         [SerializeField] private GameObject GunPrefab;
@@ -68,25 +68,5 @@ namespace CreatureGrove
         {
 
         }
-
-
-        // [IItemManager]
-        public void Equip()
-        {
-
-        }
-
-        public void Unequip()
-        {
-
-        }
-
-
-        // [ISaveLoadManager]
-        public void Save()
-        {
-
-        }
-
     }
 }
