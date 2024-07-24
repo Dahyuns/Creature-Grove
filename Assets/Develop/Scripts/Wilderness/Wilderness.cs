@@ -17,7 +17,7 @@ namespace CreatureGrove
         }
 
         // [IFieldItemManager]
-        public void PerformAction(FieldAction action)
+        public void PerformAction(FieldAction action, ItemType itemType)
         {
 
         }

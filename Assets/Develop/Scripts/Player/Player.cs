@@ -64,9 +64,19 @@ namespace CreatureGrove
 
 
         // [IFieldItemManager]
-        public void PerformAction(FieldAction action)
+        public void PerformAction(FieldAction action, ItemType itemType)
         {
+            switch (action)
+            {
+                case FieldAction.harvestItem:
 
+                    break;
+                case FieldAction.PickUpItem:
+                    //inventory.
+                    break;
+                case FieldAction.DropItem:
+                    break;
+            }
         }
     }
 }

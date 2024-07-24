@@ -5,7 +5,7 @@ namespace CreatureGrove
     public class Inventory : MonoBehaviour, IFieldItemManager, IItemManager
     {
         // [IFieldItemManager]
-        public void PerformAction(FieldAction action)
+        public void PerformAction(FieldAction action, ItemType itemType)
         {
 
         }
