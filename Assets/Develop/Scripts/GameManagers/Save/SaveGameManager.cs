@@ -1,9 +1,21 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CreatureGrove
 {
-    public class SaveGameManager : MonoBehaviour, ISaveLoadManager
+    public enum SaveType
     {
+        PLAYER,
+        ENEMY,
+        TOWNFOLK,
+        TOWN,
+        ITEM,
+        FIELD
+    }
+
+    public class SaveGameManager : MonoBehaviour
+    {
+
         private static SaveGameManager instance;
         public static SaveGameManager Instance
         {
@@ -34,9 +46,33 @@ namespace CreatureGrove
         private int mWaveLV;
         private int bossLV;
 
-        // [ISaveLoadManager]
-        public void Save()
+        // [ISaveLoadManager] : Composite ,Visitor  패턴 사용?
+        public void Save(SaveType type)
         {
+            switch (type)
+            {
+                case SaveType.PLAYER:
+                    break;
+
+                case SaveType.ENEMY:
+                    break;
+
+                case SaveType.TOWNFOLK:
+                    break;
+
+                case SaveType.TOWN:
+                    break; 
+
+                case SaveType.ITEM:
+                    break;
+
+                case SaveType.FIELD:
+                    break;
+
+                default:
+                    break;
+            }
+
 
         }
     }
