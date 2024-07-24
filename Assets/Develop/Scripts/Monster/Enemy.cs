@@ -12,6 +12,10 @@ namespace CreatureGrove
         // 체력
         private float Maxhp;
         private float hp;
+        public float HP
+        {
+            get => hp;
+        }
 
         private float defenseHPThreshold;
 
@@ -36,35 +40,15 @@ namespace CreatureGrove
         }
 
         #region
-        void sAttack()
-        {
-            //데미지 주기
-            Player player = thePlayer.GetComponent<Player>();
-            if (player != null)
-            {
-                player.TakeDamage(atkPower);
-            }
-        }
-
-        public void sTakeDamage(float playerAtk)
-        {
-            hp -= playerAtk;
-
-            if (hp < 0)
-            {
-                hp = 0;
-                sDie();
-            }
-        }
-
-        private void sDie()
+        private void Die()
         {
             // 죽는 애니메이션 재생
-            // isDead = true;
-            // update 첫줄에 리턴?
+
+            // update 첫줄에 리턴? 또는 비활성화(아래)
+            gameObject.SetActive(false);
         }
 
-        public void sHeal()
+        public void sHeal() // 스킬
         {
             hp += 10;
             if (hp > Maxhp)
@@ -74,18 +58,27 @@ namespace CreatureGrove
         }
         #endregion
 
-
         // [IDamageManager]
-        public void Attack(IDamageManager target, float amount)
+        public void Attack(GameObject target, float amount)
         {
-
+            Player player = target.GetComponent<Player>();
+            player.TakeDamage(amount);
         }
 
         public void TakeDamage(float amount)
         {
+            if (hp - amount >= 0)
+            {
+                hp -= amount;
+            }
+            else
+            {
+                hp = 0;
 
+                // 죽음
+                Die();
+            }
         }
-
 
         // [IFieldItemManager]
         public void PerformAction(FieldAction action, ItemType itemType)

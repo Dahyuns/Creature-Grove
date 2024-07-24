@@ -8,6 +8,8 @@ namespace CreatureGrove
         [SerializeField] private GameObject GunPrefab;
         [SerializeField] private GameObject BowPrefab;
 
+        private Inventory inventory;
+
         private GameObject thisWeapon;
         public GameObject Thisweapon
         {
@@ -24,6 +26,8 @@ namespace CreatureGrove
 
         private void Awake()
         {
+            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+
             switch (weaponType)
             {
                 case WeaponType.Gun:
@@ -36,14 +40,6 @@ namespace CreatureGrove
             }
         }
 
-
-        // Attack은 Weapon으로만 가능
-        public void gTakeDamage(float enemyAtk)
-        {
-            hp -= enemyAtk;
-        }
-
-
         // [ICraftingManager]
         public void createItem(ItemType type)
         {
@@ -52,16 +48,35 @@ namespace CreatureGrove
 
 
         // [IDamageManager]
-        public void Attack(IDamageManager target, float amount)
+        public void Attack(GameObject target, float amount) // 무기에서 호출?
         {
+            Enemy enemy = target.GetComponent<Enemy>();
+            enemy.TakeDamage(amount);
+        }
 
+
+        private bool isDead = false;
+        public bool IsDead
+        {
+            get { return isDead; }
         }
 
         public void TakeDamage(float amount)
         {
+            if (hp - amount >= 0)
+            {
+                hp -= amount;
+            }
+            else
+            {
+                hp = 0;
 
+                // 죽음
+                isDead = true;
+
+                // 죽음 방송, 브로드캐스팅, Gameover or Respawn
+            }
         }
-
 
         // [IFieldItemManager]
         public void PerformAction(FieldAction action, ItemType itemType)
@@ -80,3 +95,8 @@ namespace CreatureGrove
         }
     }
 }
+/*
+        harvestItem, // 채집
+
+        PickUpItem,  // 필드에 떨어진 아이템 수집
+        DropItem     // 필드에 아이템 떨어트림  */

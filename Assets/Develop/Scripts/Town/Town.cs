@@ -12,7 +12,7 @@ namespace CreatureGrove
 
 
         // [IDamageManager] : 성벽, 타워 등 방어 가능성
-        public void Attack(IDamageManager target, float amount)
+        public void Attack(GameObject target, float amount)
         {
 
         }
