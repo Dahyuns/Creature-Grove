@@ -7,32 +7,36 @@ namespace CreatureGrove
 
     public class Weapon : MonoBehaviour
     {
+        // 무기 타입
+        //public virtual WeaponType weaponType { get; }
+        public static WeaponType weaponType { get; set; }
+
         // 추가 : 공격력 적용
 
         // 공격력
-        protected float atkPower;
+        public virtual float AtkPower { get; }
 
         // 공격속도
-        protected float atkSpeed;
+        public virtual float AtkSpeed { get; }
 
         // 치명타율 - 치명타가 터지면, 추가 적용되는 비율
-        protected float criticalRate;
+        public virtual float CriticalRate { get; }
 
         // 치명타 확률
-        protected float critHitProb;
+        public virtual float CritHitProb { get; }
 
         // 치명타율 적용된 공격력 반환
         public float effectiveAtkPower()
         {
             // 1~10반환하는 랜덤함수
-            if (Random.Range(1,11) < (critHitProb / 10))
+            if (Random.Range(1,11) < (CritHitProb / 10))
             {
                 // 공격력 + 공격력의 n퍼센트
-                return atkPower + (atkPower * criticalRate);
+                return AtkPower + (AtkPower * CriticalRate);
             }
             else
             {
-                return atkPower;
+                return AtkPower;
             }
         }
 
@@ -52,7 +56,7 @@ namespace CreatureGrove
         //private float MaxDistance = 15f;
 
         // 발사체 발사
-        public void fireProjectile() 
+        public virtual void fireProjectile() 
         {
             GameObject blt = Instantiate(bullet);
 
@@ -77,8 +81,7 @@ namespace CreatureGrove
             //}
         }
                 
-
-        #region 레벨업함수
+        /* 레벨업함수
         public void LevelUp()
         {
             atkPower = atkPower + (atkPower * 0.2f);
@@ -93,6 +96,6 @@ namespace CreatureGrove
         {
             atkPower = atkPower + (level * (5f - level * reductionRate));
         }
-        #endregion
+        */
     }
 }

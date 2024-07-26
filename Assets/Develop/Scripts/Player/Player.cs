@@ -16,8 +16,9 @@ namespace CreatureGrove
             get { return thisWeapon; }
         }
 
-        private WeaponType weaponType = WeaponType.Bow;
-        public WeaponType WeaponType { get { return weaponType; } }
+        private Weapon weapon;
+
+        private string weaponTag = "Weapon";
 
         private float hp;
         private float currentWeight;
@@ -26,8 +27,26 @@ namespace CreatureGrove
 
         private void Awake()
         {
+            // ���� �±׸� ���� ������Ʈ�� ã��
+            thisWeapon = GameObject.FindGameObjectWithTag(weaponTag);
+            // ���������Ʈ�� Ŭ������ ��ĳ����
+            switch (Weapon.weaponType)
+            {
+                case WeaponType.Gun:
+                    weapon = thisWeapon.GetComponent<Gun>();
+                    break;
+
+                case WeaponType.Bow:
+                    weapon = thisWeapon.GetComponent<Bow>();
+                    break;
+            }
+
+
+            // �κ��丮 
             inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
 
+
+            /*
             switch (weaponType)
             {
                 case WeaponType.Gun:
@@ -37,7 +56,7 @@ namespace CreatureGrove
                 case WeaponType.Bow:
                     thisWeapon = Instantiate(BowPrefab, transform);
                     break;
-            }
+            }*/
         }
 
         // [ICraftingManager]

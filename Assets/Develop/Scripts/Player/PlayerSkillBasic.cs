@@ -26,16 +26,14 @@ namespace CreatureGrove
 
         private Vector3 firePoint;
 
-        private Gun gun;
-        private Bow bow;
-
         private WeaponType weaponType;
 
 
         private void Start()
         {
-            weaponType = GetComponent<Player>().WeaponType;
+            //weaponType = GetComponent<Player>().WeaponType;
 
+            /*
             switch (weaponType)
             {
                 case WeaponType.Gun:
@@ -48,7 +46,7 @@ namespace CreatureGrove
 
                 default:
                     break;
-            }
+            }*/
         }
 
         void Update()
@@ -95,7 +93,7 @@ namespace CreatureGrove
 
         void OnFire(InputValue value)
         {
-            switch (GetComponent<Player>().WeaponType)
+            switch (Weapon.weaponType)
             {
                 case WeaponType.Gun:
                     gun.fireProjectile();
