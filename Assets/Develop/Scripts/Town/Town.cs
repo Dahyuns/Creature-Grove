@@ -14,7 +14,8 @@ namespace CreatureGrove
         // [IDamageManager] : 성벽, 타워 등 방어 가능성
         public void Attack(GameObject target, float amount)
         {
-
+            Enemy enemy = target.GetComponent<Enemy>();
+            enemy.TakeDamage(amount);
         }
 
         public void TakeDamage(float amount)

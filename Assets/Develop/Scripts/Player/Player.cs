@@ -11,25 +11,25 @@ namespace CreatureGrove
         private Inventory inventory;
 
         private GameObject thisWeapon;
-        public GameObject Thisweapon
-        {
-            get { return thisWeapon; }
-        }
 
         private Weapon weapon;
 
         private string weaponTag = "Weapon";
 
         private float hp;
-        private float currentWeight;
-        private float stamina;
+        public float HP
+        {
+            get => hp;
+        }
 
+        private float currentWeight; // ÀÎº¥Åä¸® ¿ë·®
+        private float stamina; // ±â·Â
 
         private void Awake()
         {
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½Â±×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Ã£ï¿½ï¿½
+            // ¹«±â ÅÂ±×¸¦ °¡Áø ¿ÀºêÁ§Æ®¸¦ Ã£À½
             thisWeapon = GameObject.FindGameObjectWithTag(weaponTag);
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½
+            // ¹«±â¿ÀºêÁ§Æ®ÀÇ Å¬·¡½º¸¦ ¾÷Ä³½ºÆÃ
             switch (Weapon.weaponType)
             {
                 case WeaponType.Gun:
@@ -42,7 +42,7 @@ namespace CreatureGrove
             }
 
 
-            // ï¿½Îºï¿½ï¿½ä¸® 
+            // ÀÎº¥Åä¸® 
             inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
 
 
@@ -106,9 +106,19 @@ namespace CreatureGrove
 
                     break;
                 case FieldAction.PickUpItem:
-                    //inventory.
+                    // ÀÎº¥Åä¸®¿¡ Ãß°¡
+                    inventory.addToInventory(itemType);
+
+                    // ÇÊµå¿¡¼­ »èÁ¦
+
                     break;
+
                 case FieldAction.DropItem:
+                    // ÀÎº¥Åä¸®¿¡¼­ »èÁ¦
+                    inventory.removeFromInventory(itemType);
+
+                    // ÇÊµå¿¡ »ý¼º(ÇØ´çÁÂÇ¥, ÇØ´ç ¾ÆÀÌÅÛ)
+
                     break;
             }
         }
