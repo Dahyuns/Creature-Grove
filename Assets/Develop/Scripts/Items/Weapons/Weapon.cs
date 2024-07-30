@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CreatureGrove
 {
-    public enum WeaponType 
+    public enum WeaponType
     { Gun, Bow } // Sword, Wand...
 
     public class Weapon : MonoBehaviour
@@ -29,7 +29,7 @@ namespace CreatureGrove
         public float effectiveAtkPower()
         {
             // 1~10반환하는 랜덤함수
-            if (Random.Range(1,11) < (CritHitProb / 10))
+            if (Random.Range(1, 11) < (CritHitProb / 10))
             {
                 // 공격력 + 공격력의 n퍼센트
                 return AtkPower + (AtkPower * CriticalRate);
@@ -40,25 +40,22 @@ namespace CreatureGrove
             }
         }
 
-        // 참조
-        protected GameObject bullet;
-        protected GameObject bEffect;
+        [SerializeField] private GameObject bullet;
+        [SerializeField] private GameObject bEffect;
+        [SerializeField] private Transform firePoint;
 
-        protected Transform firePoint;
-
-
-        protected virtual void Start()
-        {
-            firePoint = GameObject.Find("FirePoint").transform;
-        }
+        // 참조 , null 넣지말기, null 체크하기
+        protected virtual GameObject Bullet() { return bullet; }
+        protected virtual GameObject BulletEffect() { return bEffect; }
+        protected virtual Transform FirePoint() {  return firePoint; }
 
         protected RaycastHit hit;
         //private float MaxDistance = 15f;
 
         // 발사체 발사
-        public virtual void fireProjectile() 
+        public virtual void fireProjectile()
         {
-            GameObject blt = Instantiate(bullet);
+            GameObject blt = Instantiate(Bullet());
 
             if (blt != null)
             {
@@ -72,15 +69,9 @@ namespace CreatureGrove
             {
                 Debug.Log("총알없음");
             }
-
-
             // 활 : (약한)포물선, 총 : 일직선
-            //if (Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
-            //{
-            //    hit.transform.GetComponent<MeshRenderer>().material.color = Color.red;
-            //}
         }
-                
+
         /* 레벨업함수
         public void LevelUp()
         {

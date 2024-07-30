@@ -19,8 +19,13 @@ namespace CreatureGrove
         private float critHitProb = 30f;
         public override float CritHitProb { get => critHitProb; }
 
-        [SerializeField] private GameObject thisBullet;
-        [SerializeField] private GameObject thisEffect;
+        [SerializeField] private GameObject bullet;
+        [SerializeField] private GameObject bEffect;
+        [SerializeField] private Transform firePoint;
+
+        protected override GameObject Bullet() { return bullet; }
+        protected override GameObject BulletEffect() { return bEffect; }
+        protected override Transform FirePoint() { return firePoint; }
 
         void ResetGame()
         {
@@ -32,13 +37,8 @@ namespace CreatureGrove
         }
 
 
-        protected override void Start()
+        protected void Start()
         {
-            base.Start();
-
-            base.bullet = thisBullet;
-            base.bEffect = thisEffect;
-
             ResetGame();
         }
     }

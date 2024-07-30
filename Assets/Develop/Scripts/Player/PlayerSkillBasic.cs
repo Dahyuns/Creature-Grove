@@ -24,16 +24,33 @@ namespace CreatureGrove
 
         private Vector3 tumbleDir;
 
-        private Vector3 firePoint;
+        //private WeaponType weaponType;
 
-        private WeaponType weaponType;
+        private string weaponTag = "Weapon";
 
+        private GameObject thisWeapon;
 
-        private void Start()
+        private Weapon weapon;
+
+        void Start()
         {
-            //weaponType = GetComponent<Player>().WeaponType;
+            // 무기 태그를 가진 오브젝트를 찾음
+            thisWeapon = GameObject.FindGameObjectWithTag(weaponTag);
+            // 무기오브젝트의 클래스를 업캐스팅
+            switch (Weapon.weaponType)
+            {
+                case WeaponType.Gun:
+                    weapon = thisWeapon.GetComponent<Gun>();
+                    break;
+
+                case WeaponType.Bow:
+                    weapon = thisWeapon.GetComponent<Bow>();
+                    break;
+            }
 
             /*
+             * 
+            //weaponType = GetComponent<Player>().WeaponType;
             switch (weaponType)
             {
                 case WeaponType.Gun:
@@ -93,19 +110,7 @@ namespace CreatureGrove
 
         void OnFire(InputValue value)
         {
-            switch (Weapon.weaponType)
-            {
-                case WeaponType.Gun:
-                    gun.fireProjectile();
-                    break;
-
-                case WeaponType.Bow:
-                    bow.fireProjectile();
-                    break;
-
-                default:
-                    break;
-            }
+            weapon.fireProjectile();
         }
 
 
