@@ -19,13 +19,18 @@ namespace CreatureGrove
         private float critHitProb = 30f;
         public override float CritHitProb { get => critHitProb; }
 
-        [SerializeField] private GameObject bullet;
-        [SerializeField] private GameObject bEffect;
-        [SerializeField] private Transform firePoint;
+        [SerializeField] private GameObject bowBullet;
+        [SerializeField] private GameObject bowBEffect;
+        private Transform firePoint;
 
-        protected override GameObject Bullet() { return bullet; }
-        protected override GameObject BulletEffect() { return bEffect; }
+        protected override GameObject Bullet() { return bowBullet; }
+        protected override GameObject BulletEffect() { return bowBEffect; }
         protected override Transform FirePoint() { return firePoint; }
+
+        void Awake()
+        {
+            firePoint = transform.Find(GameStrings.FirePoint);
+        }
 
         void ResetGame()
         {
@@ -34,12 +39,6 @@ namespace CreatureGrove
             atkSpeed = 2f;
             criticalRate = 50f; // 50%추가적용
             critHitProb = 30f;
-        }
-
-
-        protected void Start()
-        {
-            ResetGame();
         }
     }
 }

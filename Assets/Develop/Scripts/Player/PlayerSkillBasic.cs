@@ -26,8 +26,6 @@ namespace CreatureGrove
 
         //private WeaponType weaponType;
 
-        private string weaponTag = "Weapon";
-
         private GameObject thisWeapon;
 
         private Weapon weapon;
@@ -35,7 +33,7 @@ namespace CreatureGrove
         void Start()
         {
             // 무기 태그를 가진 오브젝트를 찾음
-            thisWeapon = GameObject.FindGameObjectWithTag(weaponTag);
+            thisWeapon = GameObject.FindGameObjectWithTag(GameStrings.WeaponTag);
             // 무기오브젝트의 클래스를 업캐스팅
             switch (Weapon.weaponType)
             {

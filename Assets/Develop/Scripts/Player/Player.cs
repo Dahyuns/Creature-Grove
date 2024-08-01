@@ -8,6 +8,29 @@ namespace CreatureGrove
         [SerializeField] private GameObject GunPrefab;
         [SerializeField] private GameObject BowPrefab;
 
+        // 여기서 무기 생성? 
+        private void Awake()
+        {
+            // 무기
+            Weapon.weaponType = WeaponType.Gun;
+            switch (Weapon.weaponType)
+            {
+                case WeaponType.Gun:
+                    Instantiate(GunPrefab,this.transform);
+                    break;
+                    
+
+                case WeaponType.Bow:
+                    Instantiate(BowPrefab, this.transform);
+                    break;
+            }
+
+
+            // 인벤토리 
+            inventory = GameObject.Find(GameStrings.Inventory)?.GetComponent<Inventory>();
+        }
+      
+
         private Inventory inventory;
 
         private float hp;
@@ -19,12 +42,6 @@ namespace CreatureGrove
         private float currentWeight; // 인벤토리 용량
         private float stamina; // 기력
 
-        private void Awake()
-        {
-            // 인벤토리 
-            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        }
-
         // [ICraftingManager]
         public void createItem(ItemType type)
         {
@@ -33,7 +50,7 @@ namespace CreatureGrove
 
 
         // [IDamageManager]
-        public void Attack(GameObject target, float amount) // 무기에서 호출?
+        public void Attack(GameObject target, float amount) // 총알에서 호출?
         {
             Enemy enemy = target.GetComponent<Enemy>();
             enemy.TakeDamage(amount);

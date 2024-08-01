@@ -8,25 +8,22 @@ namespace CreatureGrove
         private Vector3 dir;
         private bool isSet = false;
 
-        public void SetDir(Vector3 dirIn)
+        private float speed = 1.0f;
+
+        public void SetDir(Transform firePoint)
         {
-            dir = dirIn;
-            transform.position = GameObject.Find("FirePoint").transform.position;
-            isSet = true;
+            this.transform.position = firePoint.position;
+            this.transform.forward = firePoint.forward;
+            SetMove();
         }
 
-        private void Awake()
+        void SetMove()
         {
+            GetComponent<Rigidbody>().AddForce(transform.forward * speed);
             Destroy(gameObject, 5f);
         }
 
-        private void Update()
-        {
-            if (isSet)
-            {
-                transform.Translate(dir*0.1f,Space.World);
-            }
-        }
+
 
         private void OnTriggerEnter(Collider other)
         {

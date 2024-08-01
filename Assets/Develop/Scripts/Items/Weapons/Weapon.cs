@@ -8,7 +8,6 @@ namespace CreatureGrove
     public class Weapon : MonoBehaviour
     {
         // 무기 타입
-        //public virtual WeaponType weaponType { get; }
         public static WeaponType weaponType { get; set; }
 
         // 추가 : 공격력 적용
@@ -40,36 +39,30 @@ namespace CreatureGrove
             }
         }
 
-        [SerializeField] private GameObject bullet;
-        [SerializeField] private GameObject bEffect;
-        [SerializeField] private Transform firePoint;
+        private GameObject tmpObject;
 
         // 참조 , null 넣지말기, null 체크하기
-        protected virtual GameObject Bullet() { return bullet; }
-        protected virtual GameObject BulletEffect() { return bEffect; }
-        protected virtual Transform FirePoint() {  return firePoint; }
+        protected virtual GameObject Bullet() { return tmpObject; }
+        protected virtual GameObject BulletEffect() { return tmpObject; }
+        protected virtual Transform FirePoint() { return tmpObject.transform; }
 
         protected RaycastHit hit;
         //private float MaxDistance = 15f;
 
         // 발사체 발사
-        public virtual void fireProjectile()
+        public void fireProjectile()
         {
-            GameObject blt = Instantiate(Bullet());
+            Bullet blt = Instantiate(Bullet()).GetComponent<Bullet>();
+            blt.SetDir(FirePoint());
 
             if (blt != null)
             {
                 Debug.Log("발사");
-
-                // 플레이어의 앞쪽으로 쭉 이동
-                // 플레이어 dir, firePoint 위치
-                blt.GetComponent<Bullet>().SetDir(transform.forward.normalized);
             }
             else
             {
                 Debug.Log("총알없음");
             }
-            // 활 : (약한)포물선, 총 : 일직선
         }
 
         /* 레벨업함수

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2453585169092193045}
   - component: {fileID: 4528381543519838200}
   - component: {fileID: 4157697123291180833}
-  - component: {fileID: 3139438480720334015}
   m_Layer: 0
   m_Name: Gun_Model
   m_TagString: Untagged
@@ -106,20 +105,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3139438480720334015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228928387901359812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1a7aca1baf3df04cbc126e3596f0453, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisBullet: {fileID: 0}
-  thisEffect: {fileID: 0}
 --- !u!1 &458660382564580181
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,9 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a7aca1baf3df04cbc126e3596f0453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisBullet: {fileID: 4293342365463566366, guid: ae590d5bf2687de49aca6520083bd341,
+  gunBullet: {fileID: 4293342365463566366, guid: ae590d5bf2687de49aca6520083bd341,
     type: 3}
-  thisEffect: {fileID: 0}
+  gunBEffect: {fileID: 0}
 --- !u!1 &885368121617241362
 GameObject:
   m_ObjectHideFlags: 0
