@@ -12,6 +12,6 @@ namespace CreatureGrove
 
     public interface ICraftingManager
     {
-        public void createItem(ItemType type);
+        public void createItem(Item item);
     }
 }

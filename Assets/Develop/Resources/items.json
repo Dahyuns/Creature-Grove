@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "id": "ITEM001",
+      "name": "Healing Potion",
+      "type": "Consumable",
+      "effect": "Restore 50 HP",
+      "rarity": "Common",
+      "description": "A potion that heals 50 health points."
+    },
+    {
+      "id": "ITEM002",
+      "name": "Excalibur Sword",
+      "type": "Weapon",
+      "attack_power": 100,
+      "level": 10,
+      "rarity": "Legendary",
+      "description": "A legendary sword with immense power."
+    }
+  ]
+}
