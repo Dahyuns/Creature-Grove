@@ -25,13 +25,13 @@ namespace CreatureGrove
         public virtual float CritHitProb { get; }
 
         // 치명타율 적용된 공격력 반환
-        public float effectiveAtkPower()
+        protected float effectiveAtkPower()
         {
             // 1~10반환하는 랜덤함수
             if (Random.Range(1, 11) < (CritHitProb / 10))
             {
                 // 공격력 + 공격력의 n퍼센트
-                return AtkPower + (AtkPower * CriticalRate);
+                return AtkPower + (AtkPower * CriticalRate/100);
             }
             else
             {
@@ -45,15 +45,14 @@ namespace CreatureGrove
         protected virtual GameObject Bullet() { return tmpObject; }
         protected virtual GameObject BulletEffect() { return tmpObject; }
         protected virtual Transform FirePoint() { return tmpObject.transform; }
+        protected GameObject parent {  get { return Utils.GetRootParent(transform); } }
 
-        protected RaycastHit hit;
-        //private float MaxDistance = 15f;
 
         // 발사체 발사
         public void fireProjectile()
         {
-            Bullet blt = Instantiate(Bullet()).GetComponent<Bullet>();
-            blt.SetDir(FirePoint());
+            Bullet blt = Instantiate(Bullet(), this.transform, false).GetComponent<Bullet>();
+            blt.ConfigureAndShoot(FirePoint(), parent, effectiveAtkPower());
 
             if (blt != null)
             {

@@ -2,17 +2,18 @@ using UnityEngine;
 
 namespace CreatureGrove
 {
-    public class Player : MonoBehaviour, ICraftingManager, IDamageManager, IFieldItemManager
+    public class Player : MonoBehaviour, ICraftingManager, IDamageManager
     {
         // 참조
         [SerializeField] private GameObject GunPrefab;
         [SerializeField] private GameObject BowPrefab;
 
-        // 여기서 무기 생성? 
         private void Awake()
         {
-            // 무기
+            // [임시] 무기 결정
             Weapon.weaponType = WeaponType.Gun;
+
+            // 무기 생성
             switch (Weapon.weaponType)
             {
                 case WeaponType.Gun:
@@ -26,12 +27,10 @@ namespace CreatureGrove
             }
 
 
-            // 인벤토리 
-            inventory = GameObject.Find(GameStrings.Inventory)?.GetComponent<Inventory>();
+            // [임시] 인벤토리 찾기
+            // inventory = GameObject.Find(GameStrings.Inventory)?.GetComponent<Inventory>();
         }
       
-
-        private Inventory inventory;
 
         private float hp;
         public float HP
@@ -42,25 +41,28 @@ namespace CreatureGrove
         private float currentWeight; // 인벤토리 용량
         private float stamina; // 기력
 
+
+
+        // ////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // [ICraftingManager]
-        public void createItem(ItemType type)
+        public void createItem(Item item)
         {
 
         }
 
 
+
+        // ////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // [IDamageManager]
-        public void Attack(GameObject target, float amount) // 총알에서 호출?
-        {
-            Enemy enemy = target.GetComponent<Enemy>();
-            enemy.TakeDamage(amount);
-        }
-
-
         private bool isDead = false;
         public bool IsDead
         {
             get { return isDead; }
+        }
+
+        public void Attack(IDamageManager target, float amount)
+        {
+            target.TakeDamage(amount);
         }
 
         public void TakeDamage(float amount)
@@ -76,12 +78,16 @@ namespace CreatureGrove
                 // 죽음
                 isDead = true;
 
-                // 죽음 방송, 브로드캐스팅, Gameover or Respawn
+                // 죽음 방송, 브로드캐스팅, GameOver or Respawn
             }
         }
 
+
+
+        /*
+        // ////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // [IFieldItemManager]
-        public void PerformAction(FieldAction action, ItemType itemType)
+        public void PerformAction(FieldAction action, Item item)
         {
             switch (action)
             {
@@ -90,7 +96,7 @@ namespace CreatureGrove
                     break;
                 case FieldAction.PickUpItem:
                     // 인벤토리에 추가
-                    inventory.addToInventory(itemType);
+                    // inventory.addToInventory(itemType);
 
                     // 필드에서 삭제
 
@@ -98,13 +104,14 @@ namespace CreatureGrove
 
                 case FieldAction.DropItem:
                     // 인벤토리에서 삭제
-                    inventory.removeFromInventory(itemType);
+                    // inventory.removeFromInventory(itemType);
 
                     // 필드에 생성(해당좌표, 해당 아이템)
 
                     break;
             }
         }
+        */
     }
 }
 /*

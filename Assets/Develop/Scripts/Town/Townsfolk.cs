@@ -6,17 +6,16 @@ namespace CreatureGrove
     public class Townsfolk : MonoBehaviour, ICraftingManager, IDamageManager, IFieldItemManager, IScoutingQuestManager
     {
         // [ICraftingManager]
-        public void createItem(ItemType type)
+        public void createItem(Item item)
         {
 
         }
 
 
         // [IDamageManager] : 같이 싸움 가능성 있음
-        public void Attack(GameObject target, float amount)
+        public void Attack(IDamageManager target, float amount)
         {
-            Enemy enemy = target.GetComponent<Enemy>();
-            enemy.TakeDamage(amount);
+            target.TakeDamage(amount);
         }
 
         public void TakeDamage(float amount)
@@ -26,7 +25,7 @@ namespace CreatureGrove
 
 
         // [IFieldItemManager]
-        public void PerformAction(FieldAction action, ItemType itemType)
+        public void PerformAction(FieldAction action, Item item)
         {
 
         }

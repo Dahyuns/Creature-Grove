@@ -5,7 +5,7 @@ namespace CreatureGrove
 {
     public class PlayerSkillBasic : MonoBehaviour
     {
-        // [Tumble]
+        #region [Tumble]
         // 목표 방향으로 특정 거리만큼 구르기!
         // 목표 지점 : 마우스 위치
         private Vector3 tumbleTarget;
@@ -23,17 +23,17 @@ namespace CreatureGrove
         private bool isTumble;
 
         private Vector3 tumbleDir;
+        #endregion
 
-        //private WeaponType weaponType;
-
+        // 참조
         private GameObject thisWeapon;
-
         private Weapon weapon;
 
         void Start()
         {
             // 무기 태그를 가진 오브젝트를 찾음
             thisWeapon = GameObject.FindGameObjectWithTag(GameStrings.WeaponTag);
+
             // 무기오브젝트의 클래스를 업캐스팅
             switch (Weapon.weaponType)
             {
@@ -45,24 +45,14 @@ namespace CreatureGrove
                     weapon = thisWeapon.GetComponent<Bow>();
                     break;
             }
-
-            /*
-             * 
-            //weaponType = GetComponent<Player>().WeaponType;
-            switch (weaponType)
-            {
-                case WeaponType.Gun:
-                    gun = GetComponent<Player>().Thisweapon.GetComponent<Gun>();
-                    break;
-
-                case WeaponType.Bow:
-                    bow = GetComponent<Player>().Thisweapon.GetComponent<Bow>();
-                    break;
-
-                default:
-                    break;
-            }*/
         }
+
+        void OnFire(InputValue value)
+        {
+            weapon.fireProjectile();
+        }
+
+        #region [Tumble]
 
         void Update()
         {
@@ -81,15 +71,6 @@ namespace CreatureGrove
             }
         }
 
-        void Tumble()
-        {
-            // 부드럽게 구르기
-            transform.position = Vector3.Lerp(transform.position,tumbleDir, tumbleSpeed);
-
-            // 구른 거리 추가
-
-        }
-
         void OnTumble(InputValue value)
         {
             if (isTumble == false)
@@ -106,11 +87,14 @@ namespace CreatureGrove
             }
         }
 
-        void OnFire(InputValue value)
+        void Tumble()
         {
-            weapon.fireProjectile();
-        }
+            // 부드럽게 구르기
+            transform.position = Vector3.Lerp(transform.position,tumbleDir, tumbleSpeed);
 
+            // 구른 거리 추가
+
+        }
 
         // 구르기중 "오브젝트에 부딪힌다"면 움직임을 제한 
         private void OnCollisionEnter(Collision collision)
@@ -123,6 +107,7 @@ namespace CreatureGrove
                 }
             }
         }
+        #endregion
     }
 
 }

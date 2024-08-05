@@ -7,10 +7,10 @@ namespace CreatureGrove
         cudgel, stone // ¸ùµÕÀÌ, µ¹¸ÍÀÌ   ...   Ã¢°ú ¹æÆÐ, ÁöÆÎÀÌ(¸¶¹ý)
     }
 
-    public class Enemy : MonoBehaviour, IDamageManager, IFieldItemManager
+    public class Enemy : MonoBehaviour, IDamageManager
     {
         // Ã¼·Â
-        private float Maxhp;
+        private float Maxhp = 1000f;
         private float hp;
         public float HP
         {
@@ -39,6 +39,10 @@ namespace CreatureGrove
             hp = Maxhp;
         }
 
+        void Update()
+        {
+        }
+
         #region
         private void Die()
         {
@@ -59,15 +63,15 @@ namespace CreatureGrove
         #endregion
 
         // [IDamageManager]
-        public void Attack(GameObject target, float amount)
+        public void Attack(IDamageManager target, float amount)
         {
-            Player player = target.GetComponent<Player>();
-            player.TakeDamage(amount);
+            target.TakeDamage(amount);
         }
 
         public void TakeDamage(float amount)
         {
-            if (hp - amount >= 0)
+            Debug.Log(hp);
+            if (hp - amount > 0)
             {
                 hp -= amount;
             }
@@ -81,7 +85,7 @@ namespace CreatureGrove
         }
 
         // [IFieldItemManager]
-        public void PerformAction(FieldAction action, ItemType itemType)
+        public void PerformAction(FieldAction action, Item item)
         {
 
         }

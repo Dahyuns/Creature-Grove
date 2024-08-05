@@ -5,15 +5,25 @@ namespace CreatureGrove
     public class Bullet : MonoBehaviour
     {
         // 추가? : 오브젝트 풀링
-        private Vector3 dir;
-        private bool isSet = false;
 
-        private float speed = 1.0f;
+        private float speed = 0.5f;
+        private float damage = 0f;
 
-        public void SetDir(Transform firePoint)
+        private IDamageManager shooter;
+
+        public void ConfigureAndShoot(Transform firePoint, GameObject parent, float value)
         {
+            // FirePoint 위치와 방향으로 발사체 위치와 방향 설정
             this.transform.position = firePoint.position;
             this.transform.forward = firePoint.forward;
+
+            // 발사체를 쏜 사람 설정
+            shooter = parent.gameObject.GetComponent<IDamageManager>();
+
+            // 발사체 데미지 설정
+            damage = value;
+
+            // 발사체 이동 시작
             SetMove();
         }
 
@@ -23,15 +33,23 @@ namespace CreatureGrove
             Destroy(gameObject, 5f);
         }
 
-
-
         private void OnTriggerEnter(Collider other)
         {
-            Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            if (enemy != null)
+            IDamageManager target = other.gameObject.GetComponent<IDamageManager>();
+
+            if (target != null && target != shooter)
             {
-                Debug.Log("적 데미지");
-               // enemy.TakeDamage(Gun.effectiveAtkPower());
+                shooter.Attack(target, damage); 
+
+
+                if (target is Enemy)
+                {
+                    Debug.Log("적 데미지");
+                }
+                else if (target is Player)
+                {
+                    Debug.Log("플레이어 데미지");
+                }
             }
         }
     }
