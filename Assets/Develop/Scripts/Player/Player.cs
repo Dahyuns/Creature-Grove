@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CreatureGrove
 {
-    public class Player : MonoBehaviour, ICraftingManager, IDamageManager
+    public class Player : MonoBehaviour, IDamageManager
     {
         // 참조
         [SerializeField] private GameObject GunPrefab;
@@ -42,16 +42,6 @@ namespace CreatureGrove
         private float stamina; // 기력
 
 
-
-        // ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // [ICraftingManager]
-        public void createItem(Item item)
-        {
-
-        }
-
-
-
         // ////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // [IDamageManager]
         private bool isDead = false;
@@ -81,41 +71,5 @@ namespace CreatureGrove
                 // 죽음 방송, 브로드캐스팅, GameOver or Respawn
             }
         }
-
-
-
-        /*
-        // ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // [IFieldItemManager]
-        public void PerformAction(FieldAction action, Item item)
-        {
-            switch (action)
-            {
-                case FieldAction.harvestItem:
-
-                    break;
-                case FieldAction.PickUpItem:
-                    // 인벤토리에 추가
-                    // inventory.addToInventory(itemType);
-
-                    // 필드에서 삭제
-
-                    break;
-
-                case FieldAction.DropItem:
-                    // 인벤토리에서 삭제
-                    // inventory.removeFromInventory(itemType);
-
-                    // 필드에 생성(해당좌표, 해당 아이템)
-
-                    break;
-            }
-        }
-        */
     }
 }
-/*
-        harvestItem, // 채집
-
-        PickUpItem,  // 필드에 떨어진 아이템 수집
-        DropItem     // 필드에 아이템 떨어트림  */

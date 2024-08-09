@@ -83,11 +83,5 @@ namespace CreatureGrove
                 Die();
             }
         }
-
-        // [IFieldItemManager]
-        public void PerformAction(FieldAction action, Item item)
-        {
-
-        }
     }
 }

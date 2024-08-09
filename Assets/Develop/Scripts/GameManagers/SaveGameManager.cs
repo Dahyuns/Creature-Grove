@@ -15,7 +15,7 @@ namespace CreatureGrove
 
     public class SaveGameManager : MonoBehaviour
     {
-
+        #region 싱글턴
         private static SaveGameManager instance;
         public static SaveGameManager Instance
         {
@@ -32,6 +32,7 @@ namespace CreatureGrove
             }
             DestroyImmediate(gameObject);
         }
+        #endregion
 
         // 플레이어 관련
         private int playerLV;

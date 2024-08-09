@@ -2,8 +2,27 @@ using UnityEngine;
 
 namespace CreatureGrove
 {
-    public class Town : MonoBehaviour, ICraftingManager, IDamageManager, IFieldItemManager, IItemManager
+    public class Town : MonoBehaviour, ICraftingManager, IDamageManager, IItemManager
     {
+        #region 싱글턴
+        private static Town instance;
+        public static Town Instance
+        {
+            get { return instance; }
+        }
+
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+                return;
+            }
+            DestroyImmediate(gameObject);
+        }
+        #endregion
+
         // [ICraftingManager] :  마을 제작대에서 제작 가능
         public void createItem(Item item)
         {
@@ -21,14 +40,6 @@ namespace CreatureGrove
         {
 
         }
-
-
-        // [IFieldItemManager]
-        public void PerformAction(FieldAction action, Item item)
-        {
-
-        }
-
 
         // [IItemManager]
         public void Equip()

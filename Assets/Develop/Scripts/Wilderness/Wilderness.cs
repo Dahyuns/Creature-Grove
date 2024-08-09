@@ -8,16 +8,30 @@ namespace CreatureGrove
         Enemy      // 몬스터
     }
 
-    public class Wilderness : MonoBehaviour, ICharacterCreationManager, IFieldItemManager
+    // 필드
+    public class Wilderness : MonoBehaviour, ICharacterCreationManager
     {
-        // [ICharacterCreationManager]
-        public void CreatCharacter(CharacterType type)
+        #region 싱글턴
+        private static Wilderness instance;
+        public static Wilderness Instance
         {
-
+            get { return instance; }
         }
 
-        // [IFieldItemManager]
-        public void PerformAction(FieldAction action, ItemType itemType)
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+                return;
+            }
+            DestroyImmediate(gameObject);
+        }
+        #endregion
+
+        // [ICharacterCreationManager]
+        public void CreatCharacter(CharacterType type)
         {
 
         }
