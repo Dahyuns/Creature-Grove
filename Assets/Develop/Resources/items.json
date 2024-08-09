@@ -1,21 +1,102 @@
 {
   "items": [
+    // 나무
     {
-      "id": "ITEM001",
-      "name": "Healing Potion",
-      "type": "Consumable",
-      "effect": "Restore 50 HP",
-      "rarity": "Common",
-      "description": "A potion that heals 50 health points."
+      "id": "Nature-01",
+      "name": "Wood",
+      "type": "BUILDING_MATERIAL",
+      "rarity": "Common"
     },
+    // 돌
     {
-      "id": "ITEM002",
+      "id": "Nature-02",
+      "name": "Rock",
+      "type": "BUILDING_MATERIAL",
+      "rarity": "Common"
+    },
+    // 몬스터 무기 - 칼
+    {
+      "id": "Weapon-01",
       "name": "Excalibur Sword",
       "type": "Weapon",
       "attack_power": 100,
+      "level": 1,
+      "rarity": "Common",
+      "description": "A sword."
+    },
+    // 몬스터 무기 - 몽둥이
+    {
+      "id": "Weapon-02",
+      "name": "Excalibur Sword",
+      "type": "Weapon",
+      "attack_power": 100,
+      "level": 1,
+      "rarity": "Common",
+      "description": "A sword."
+    },
+    // 몬스터 무기 - 활
+    {
+      "id": "Weapon-03",
+      "name": "Excalibur Sword",
+      "type": "Weapon",
+      "attack_power": 100,
+      "level": 1,
+      "rarity": "Common",
+      "description": "A sword."
+    },
+    // 제작 도구 - 망치
+    {
+      "id": "TOOL-01",
+      "name": "",
+      "type": "TOOL",
       "level": 10,
       "rarity": "Legendary",
-      "description": "A legendary sword with immense power."
+      "description": ""
+    },
+    // 제작 도구 - 톱
+    {
+      "id": "TOOL-01",
+      "name": "",
+      "type": "TOOL",
+      "level": 10,
+      "rarity": "Legendary",
+      "description": ""
+    },
+    // 방어구 1
+    {
+      "id": "ARMOR-01",
+      "name": "",
+      "type": "ARMOR",
+      "level": 10,
+      "rarity": "Legendary",
+      "description": ""
+    },
+    // 방어구 2
+    {
+      "id": "ARMOR-02",
+      "name": "",
+      "type": "ARMOR",
+      "level": 10,
+      "rarity": "Legendary",
+      "description": ""
+    },
+    // 악세서리 1
+    {
+      "id": "ACCESSORY-01",
+      "name": "",
+      "type": "ACCESSORY",
+      "level": 10,
+      "rarity": "Legendary",
+      "description": ""
+    },
+    // 악세서리 2
+    {
+      "id": "ACCESSORY-02",
+      "name": "",
+      "type": "ACCESSORY",
+      "level": 10,
+      "rarity": "Legendary",
+      "description": ""
     }
   ]
 }
