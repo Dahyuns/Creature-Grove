@@ -11,6 +11,6 @@ namespace CreatureGrove
 
     public interface IFieldItemManager
     {
-        public void PerformAction(FieldAction action, ItemType itemType); // enum으로 할지, class로 할지..
+        public void PerformAction(FieldAction action, Item item);
     }
 }
