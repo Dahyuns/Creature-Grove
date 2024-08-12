@@ -5,14 +5,16 @@
       "id": "Nature-01",
       "name": "Wood",
       "type": "BUILDING_MATERIAL",
-      "rarity": "Common"
+      "rarity": "Common",
+      "path": "Textures/Backgrounds/background1"
     },
     // 돌
     {
       "id": "Nature-02",
       "name": "Rock",
       "type": "BUILDING_MATERIAL",
-      "rarity": "Common"
+      "rarity": "Common",
+      "path": "Textures/Backgrounds/background1"
     },
     // 몬스터 무기 - 칼
     {

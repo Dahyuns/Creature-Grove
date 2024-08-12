@@ -8,10 +8,8 @@ namespace CreatureGrove
 
     public class ItemController : MonoBehaviour
     {
-        public ItemController Instance { get; private set; }
-
-        public ItemList itemList;
-        private Item tmpItem;
+        #region 싱글턴
+        public static ItemController Instance { get; private set; }
 
         void Start()
         {
@@ -24,9 +22,14 @@ namespace CreatureGrove
             {
                 Destroy(this.gameObject);
             }
+        #endregion
             LoadItems();
         }
 
+        public ItemList itemList;
+        private Item tmpItem;
+
+        // JSON 파일을 로드하여 ItemList를 초기화
         void LoadItems()
         {
             TextAsset jsonTextFile = Resources.Load<TextAsset>("items");
@@ -35,15 +38,15 @@ namespace CreatureGrove
                 // JSON 데이터를 ItemList 객체로 변환
                 itemList = JsonUtility.FromJson<ItemList>(jsonTextFile.text);
 
-                // 아이템 데이터를 출력 (디버깅용)
-                foreach (Item item in itemList.items)
+                /* 아이템 데이터를 출력 (디버깅용)
+                 (Item item in itemList.items)
                 {
                     Debug.Log("ID: " + item.id + ", Name: " + item.name + ", Type: " + item.type);
-                }
+                }*/
             }
             else
             {
-                Debug.LogError("Failed to load items.json from Resources folder");
+                Debug.LogError("Failed to load the JSON file.");
             }
         }
 
