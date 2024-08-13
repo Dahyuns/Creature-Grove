@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
 
 namespace CreatureGrove
 {
@@ -9,6 +7,12 @@ namespace CreatureGrove
         // 인벤토리 저장칸 (수정은 이 안에서만)
         private Item[] items;
         public Item[] Items { get { return items; } }
+
+        // 인벤토리에 저장되어있는 아이템들의 ID
+        private string[] ids;
+
+        // null방지
+        private Item nullItem;
 
         #region 싱글턴
         private static Inventory instance;
@@ -27,56 +31,51 @@ namespace CreatureGrove
             }
             DestroyImmediate(gameObject);
             #endregion
-            items = ItemController.Instance.itemList.items;
-        }
-
-        // 인벤토리에 등록
-        //public void addToInventory(Item item) { items.Add(item); }
-
-        // 인벤토리에서 삭제
-        //public void removeFromInventory(Item item) { items.Remove(item); }
-    }
-
-    public class UIInventory : MonoBehaviour
-    {
-        public Image[] uiImage;
-
-        // Inventory Panel
-        [SerializeField] private RectTransform panel;
-
-        private void SetInventory()
-        {
-            panel = GetComponent<RectTransform>();
-
-            for (int i = 0; i < Inventory.Instance.Items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
-                foreach (var item in Inventory.Instance.Items)
+                if (ItemController.Instance.itemList.items[i] != null)
                 {
-                    LoadImage(item.id,i);
+                    items[i] = ItemController.Instance.itemList.items[i];
+                    continue;
                 }
+                items[i] = nullItem;
             }
         }
 
-        public void LoadImage(string id, int num)
+        // 해당 아이템을 인벤토리에 등록 (마지막칸에? 배열인데 어케하쥐)
+        public void addToInventory(Item item) 
         {
-            string path = ItemController.Instance.GetItemById(id).path;
-            if (string.IsNullOrEmpty(path) == false)
+            int blank = items.Length;
+            for (int i = 0; i < items.Length; i++)
             {
-                // 경로를 통해 이미지 로드
-                Texture2D texture = Resources.Load<Texture2D>(path);
-                if (texture != null)
+                // 같은 아이템 등록시 +1
+                if (items[i] == item)
                 {
-                    // 텍스처를 Sprite로 변환하여 UI 이미지에 적용
-                    uiImage[num].sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                    items[i].amount += 1;
+                    return;
                 }
-                else
+
+                // 없는 아이템 등록시
+                // 빈칸 체크 (빈칸이 더 뒤에 있을때만)
+                if (blank > i && items[i] == nullItem)
                 {
-                    Debug.LogError("Failed to load the image at path: " + path);
+                    blank = i;
                 }
             }
-            else
+            // 가장 앞에 있는 빈칸에 아이템 추가
+            items[blank] = item; 
+        }
+
+        // 해당 아이템을 인벤토리에서 삭제
+        public void removeFromInventory(Item item) 
+        { 
+            for (int i = 0; i < items.Length; i++) 
             {
-                Debug.LogError("Item ID not found: " + id);
+                if (items[i] == item)
+                {
+                    items[i] = nullItem;
+                    return;
+                }
             }
         }
     }

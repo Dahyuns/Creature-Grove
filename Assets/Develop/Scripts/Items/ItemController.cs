@@ -1,4 +1,3 @@
-using CreatureGrove;
 using UnityEngine;
 
 namespace CreatureGrove

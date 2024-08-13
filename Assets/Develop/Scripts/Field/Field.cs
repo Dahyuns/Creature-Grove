@@ -27,28 +27,30 @@ namespace CreatureGrove
         #endregion
 
         // 필드에 추가 (해당 위치, 해당 아이템)
-        public void PerformAction(FieldAction action, Item item)
+        public void PerformAction(FieldAction action, GameObject item)
         {
+            Item i = item.GetComponent<Item>();
             switch (action)
             {
                 case FieldAction.harvestItem:
                     // 인벤토리에 추가
-                    Inventory.Instance.addToInventory(item);
+                    Inventory.Instance.addToInventory(i);
                     // 필드에서 삭제
-
+                    Destroy(item);
 
                     break;
                 case FieldAction.PickUpItem:
                     // 인벤토리에 추가
-                    Inventory.Instance.addToInventory(item);
+                    Inventory.Instance.addToInventory(i);
 
                     // 필드에서 삭제
+                    Destroy(item);
 
                     break;
 
                 case FieldAction.DropItem:
                     // 인벤토리에서 삭제
-                    Inventory.Instance.removeFromInventory(item);
+                    Inventory.Instance.removeFromInventory(i);
 
                     // 필드에 생성(해당좌표, 해당 아이템)
 

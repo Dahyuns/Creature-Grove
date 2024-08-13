@@ -11,6 +11,7 @@ namespace CreatureGrove
         public string description; // Ό³Έν
         public int attack_power;
         public int level;
+        public int amount;
         public string path;
     }
 
