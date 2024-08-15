@@ -36,5 +36,6 @@ Creature Grove
 ![다이어그램](https://github.com/user-attachments/assets/4a2e30b3-a1d9-45c3-94ec-3fa75972a295)
 
 ### 인터페이스 표
-![image](https://github.com/user-attachments/assets/877e4ee7-9ab1-4552-a07f-cfe9fdd2f276)
+![image](https://github.com/user-attachments/assets/85f022a9-6394-4d60-b210-3d30c80759ba)
+
 
