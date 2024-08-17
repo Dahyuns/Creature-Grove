@@ -46,12 +46,13 @@ namespace CreatureGrove
         protected virtual GameObject BulletEffect() { return tmpObject; }
         protected virtual Transform FirePoint() { return tmpObject.transform; }
         protected GameObject parent {  get { return Utils.GetRootParent(transform); } }
+        public GameObject nullObject;
 
 
         // 발사체 발사
         public void fireProjectile()
         {
-            Bullet blt = Instantiate(Bullet(), this.transform, false).GetComponent<Bullet>();
+            Bullet blt = Instantiate(Bullet(), nullObject.transform, false).GetComponent<Bullet>();
             blt.ConfigureAndShoot(FirePoint(), parent, effectiveAtkPower());
 
             if (blt != null)
