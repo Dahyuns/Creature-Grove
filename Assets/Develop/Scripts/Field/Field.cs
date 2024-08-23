@@ -5,7 +5,7 @@ using UnityEngine;
         DropItem     // 필드에 아이템 떨어트림  */
 namespace CreatureGrove
 {
-    public class Field : MonoBehaviour
+    public class Field : MonoBehaviour, ICharacterCreationManager
     {
         #region 싱글턴
         private static Field instance;
@@ -23,8 +23,9 @@ namespace CreatureGrove
                 return;
             }
             DestroyImmediate(gameObject);
+            #endregion
         }
-        #endregion
+
 
         // 필드에 추가 (해당 위치, 해당 아이템)
         public void PerformAction(FieldAction action, GameObject item)
@@ -58,6 +59,10 @@ namespace CreatureGrove
             }
         }
 
-        // 필드에서 삭제
+        // [ICharacterCreationManager]
+        public void CreatCharacter(CharacterType type)
+        {
+
+        }
     }
 }
