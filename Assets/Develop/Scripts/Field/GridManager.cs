@@ -11,10 +11,28 @@ namespace CreatureGrove
 
         public int[,] gridArray { get; private set; }
 
-        [SerializeField]private GameObject ject;
-
-        void Awake()
+        #region 싱글턴
+        private static GridManager instance;
+        public static GridManager Instance
         {
+            get { return instance; }
+        }
+
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+                return;
+            }
+            DestroyImmediate(gameObject);
+        }
+            #endregion
+
+        private void Start()
+        {
+            Debug.Log("GridManager On");
             gridArray = new int[gridWidth, gridHeight];
 
             // "-1" : 마을, "0" : 야생, "1" : 어둠지역, "2" : 그외 지역(미사용)
@@ -72,16 +90,6 @@ namespace CreatureGrove
             gridArray[8, 0] = 2;
             gridArray[8, 1] = 2;
             #endregion
-
-            for (int x = 0; x < gridWidth; x++)
-            {
-                for (int y = 0; y < gridHeight; y++)
-                {
-                    Vector3 v = GetWorldPosition(x, y);
-                    GameObject b = Instantiate(ject);
-                    b.transform.position = v;
-                }
-            }
         }
 
         // 그리드 상의 좌표를 월드 좌표로 변환, 기준점 => (-200,-50)
@@ -90,6 +98,4 @@ namespace CreatureGrove
             return new Vector3(x * cellSize + -200, 0, y * cellSize - 50);
         }
     }
-
-
 }
