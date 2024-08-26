@@ -32,7 +32,6 @@ namespace CreatureGrove
 
         private void Start()
         {
-            Debug.Log("GridManager On");
             gridArray = new int[gridWidth, gridHeight];
 
             // "-1" : 마을, "0" : 야생, "1" : 어둠지역, "2" : 그외 지역(미사용)

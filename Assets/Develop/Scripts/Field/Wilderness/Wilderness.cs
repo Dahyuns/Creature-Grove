@@ -8,6 +8,11 @@ namespace CreatureGrove
         Enemy      // 몬스터
     }
 
+    enum NatureObjType
+    {
+        Grass, Tree, Rock
+    }
+
     // 필드 - 야생
     // 나무, 잡초 생성 및 관리
     public class Wilderness : MonoBehaviour
@@ -29,25 +34,29 @@ namespace CreatureGrove
             }
             DestroyImmediate(gameObject);
         }
-            #endregion
+        #endregion
+
+        // 참조 (오브젝트 랜덤 반환해주는 함수 추가하기)
+        [SerializeField] private GameObject[] grasses;
+        [SerializeField] private GameObject[] trees;
+        [SerializeField] private GameObject[] rocks;
+        [SerializeField] private GameObject parent;
+
+        // 한칸당 유닛의 개수
+        private int totalUnits = 10;
+        [SerializeField] private float grassScale = 1;
+        [SerializeField] private float treeScale = 1;
+        [SerializeField] private float rockScale = 1;
+
+        // sin함수 그래프 폭(주기) 간격 (커질수록 촘촘해짐, 기본은 1)
+        [SerializeField] private float Mult = 1;
+
+        private GameObject sineObj;
 
         private void Start()
         {
             SetNature();
         }
-
-        // [씬 로드시, 잡초들 세팅] (마을, 어둠지역 제외하기)
-        // 참조
-        [SerializeField] private GameObject grass;
-        [SerializeField] private GameObject tree;
-        [SerializeField] private GameObject rock;
-
-        // 한칸당 유닛의 개수
-        private int totalUnits = 10;
-
-        // sin함수 그래프 폭 간격 (커질수록 촘촘해짐, 기본은 1)
-        public float cycleMulti = 1;
-
 
         public void SetNature()
         {
@@ -58,37 +67,74 @@ namespace CreatureGrove
                 for (int y = 0; y < array.GetLength(1); y++)
                 {
                     // 해당 칸이 야생이라면
-                    if (array[x,y] == 0)
+                    if (array[x, y] == 0)
                     {
-                        InstantiateSineWaveObject(GridManager.Instance.cellSize, grass, x, y,0);
-                        InstantiateSineWaveObject(GridManager.Instance.cellSize, tree, x, y, 2);
-                        InstantiateSineWaveObject(GridManager.Instance.cellSize, rock, x, y, 4);
+                        InstantiateSineWaveObject(GridManager.Instance.cellSize, NatureObjType.Grass, grassScale, x, y, 0);
+                        InstantiateSineWaveObject(GridManager.Instance.cellSize, NatureObjType.Tree,  treeScale, x, y, 2);
+                        InstantiateSineWaveObject(GridManager.Instance.cellSize, NatureObjType.Rock,  rockScale, x, y, 4);
                     }
                 }
             }
         }
 
-        public void InstantiateSineWaveObject(float cellSize, GameObject obj, int x, int y, int seed)
+        // 사인 그래프를 활용하여 오브젝트를 생성 (한칸의 크기, 생성할 오브젝트, x칸 번호, y칸 번호, 랜덤 시드값 (2파이 안으로))
+        private void InstantiateSineWaveObject(float cellSize, NatureObjType ntype, float scale, int x, int y, int seed)
         {
-            Debug.Log("InstantiateSineWaveObject On");
             // 위에서 아래 x = sin(y)
             // 한 단위당 거리
-            float unit = cellSize / totalUnits;
+            float unit = cellSize / (totalUnits * scale);
 
-            for (int  i = 0; i < totalUnits; i++)
+            for (int i = 0; i < (totalUnits * scale); i++)
             {
-                float numX = (unit * i) + (unit / 2); 
+                float numX = (unit * i) + (unit / 2);
 
                 // 진폭, 파형의 '높이'(=cellSize의 반) * SIN함수 (드롭 간격 * x값)     + 원점이동값(=cellSize의 반)
-                float numY = (cellSize / 2)          * Mathf.Sin(cycleMulti * numX + seed) - cellSize / 2; // 
+                float numY = (cellSize / 2) * Mathf.Sin(Mult * numX + seed) - cellSize / 2;
 
-                GameObject sineObj = Instantiate(obj);
+                switch (ntype)
+                {
+                    case NatureObjType.Grass:
+                        sineObj = Instantiate(RandomGrassObj(), parent.transform);
+                        break;
+
+                    case NatureObjType.Tree:
+                        sineObj = Instantiate(RandomTreeObj(), parent.transform);
+                        break;
+
+                    case NatureObjType.Rock:
+                        sineObj = Instantiate(RandomRockObj(), parent.transform);
+                        break;
+                }
+
                 float newGrassX = this.transform.position.x + x * cellSize + numX;
                 float newGrassY = this.transform.position.y + y * cellSize + numY;
 
                 // 시작 위치 + numX, 0, 시작위치 + numZ
-                sineObj.transform.position = new Vector3 (newGrassX, 0, newGrassY);
+                sineObj.transform.position = new Vector3(newGrassX, 0, newGrassY);
             }
         }
+
+        #region 인스펙터 창 내 배열에서 랜덤한 오브젝트 반환
+        private GameObject RandomGrassObj()
+        {
+            int i = Random.Range(0, grasses.Length);
+
+            return grasses[i];
+        }
+
+        private GameObject RandomTreeObj()
+        {
+            int i = Random.Range(0, trees.Length);
+
+            return trees[i];
+        }
+
+        private GameObject RandomRockObj()
+        {
+            int i = Random.Range(0, rocks.Length);
+
+            return rocks[i];
+        }
+        #endregion
     }
 }
