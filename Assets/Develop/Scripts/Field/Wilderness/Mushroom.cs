@@ -4,7 +4,7 @@ namespace CreatureGrove
 {
     public class Mushroom : NatureInteractable
     {
-        protected override void Interact()
+        public override void Interact()
         {
 
         }

@@ -15,14 +15,14 @@ namespace CreatureGrove
         */
         // 리스폰 : 사라졌다가 다시 시간지나면 (몇초 or 아침) - 돌은 리스폰 안되겡
 
-        protected virtual void Interact()
+        public virtual void Interact()
         {
             Debug.Log("NatureInteractable - Interact 실행");
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            Interact();
+
         }
     }
 }

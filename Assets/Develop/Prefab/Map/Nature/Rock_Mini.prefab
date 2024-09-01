@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3616571412760022072}
   - component: {fileID: 3074524268915392004}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock_Mini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 7573139584755959549}
   - component: {fileID: 199114164414041256}
   - component: {fileID: 3390907764761093207}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 44622999761620367}
   - component: {fileID: 8360628282795925475}
   - component: {fileID: 1948879852914925565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EA03_Environment_Rock_Head_01a_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 7497206307357028955}
   - component: {fileID: 5544139788071640817}
   - component: {fileID: 7948228844945942589}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EA03_Environment_Rock_Head_01a_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 8314670628627847748}
   - component: {fileID: 6192762824604630084}
   - component: {fileID: 2046677446691292473}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EA03_Environment_Rock_Head_01a_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5921,13 +5921,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.97236997, z: -0.23344536, w: 0}
-  m_LocalPosition: {x: -0.09, y: 3.86, z: 5.99}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.1277627, y: -0, z: -0, w: 0.9918048}
+  m_LocalPosition: {x: -0.20000002, y: 1.19, z: -4}
+  m_LocalScale: {x: 2.222222, y: 0.7227589, z: 1.3047801}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 27, y: 180, z: 0}
+  m_Father: {fileID: 684720923}
+  m_LocalEulerAnglesHint: {x: 14.681, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10627,6 +10627,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood1
       objectReference: {fileID: 0}
+    - target: {fileID: 817764198439050018, guid: dc2824351bdb4be44b9e6e7bd267b8ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11842,10 +11847,11 @@ GameObject:
   - component: {fileID: 684720920}
   - component: {fileID: 684720927}
   - component: {fileID: 684720924}
+  - component: {fileID: 684720928}
   - component: {fileID: 684720925}
   - component: {fileID: 684720926}
-  - component: {fileID: 684720928}
-  m_Layer: 0
+  - component: {fileID: 684720929}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11936,8 +11942,10 @@ Transform:
   m_LocalScale: {x: 0.45, y: 1.6, z: 0.55}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1769382506}
   - {fileID: 756012225}
   - {fileID: 2072452546}
+  - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &684720924
@@ -12040,6 +12048,21 @@ MonoBehaviour:
     type: 3}
   BowPrefab: {fileID: 5000675815102001459, guid: 4698331c3f5eb7549a77dc4201828529,
     type: 3}
+--- !u!114 &684720929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684720919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5174c671b9ee18043bf86a38f913a701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &688602307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13181,6 +13204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood2
       objectReference: {fileID: 0}
+    - target: {fileID: 4856981318113165924, guid: 8f5708b4af700eb428044887d028c891,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9142421625592676308, guid: 8f5708b4af700eb428044887d028c891,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13260,7 +13288,7 @@ GameObject:
   - component: {fileID: 756012229}
   - component: {fileID: 756012228}
   - component: {fileID: 756012227}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27565,6 +27593,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1765397106}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1769382505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1769382506}
+  m_Layer: 10
+  m_Name: Bullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1769382506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769382505}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.466934, y: 4.7720504, z: 12.85093}
+  m_LocalScale: {x: 2.2222223, y: 0.625, z: 1.8181819}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 684720923}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1771927991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32200,7 +32259,7 @@ GameObject:
   - component: {fileID: 2072452549}
   - component: {fileID: 2072452548}
   - component: {fileID: 2072452547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33948,7 +34007,6 @@ SceneRoots:
   - {fileID: 461771363}
   - {fileID: 832575519}
   - {fileID: 1574255316}
-  - {fileID: 330585546}
   - {fileID: 327726901}
   - {fileID: 2040668553}
   - {fileID: 1194060151}
