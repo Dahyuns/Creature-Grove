@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4720567090276814634}
-  - component: {fileID: 3603164063907175847}
-  m_Layer: 7
+  - component: {fileID: 6971420809872471421}
+  m_Layer: 0
   m_Name: Rock_Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,33 +36,27 @@ Transform:
   - {fileID: 6087746884596409812}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &3603164063907175847
-LODGroup:
+--- !u!95 &6971420809872471421
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2793292170338867630}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.0075295717, y: -0.017421424, z: 0.00017476082}
-  m_Size: 0.74214244
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.25
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 2185002946209363955}
-  - screenRelativeHeight: 0.125
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 7585857011600749590}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 2712517475768840096}
   m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b710d7c58ac1c49408d1af520f68936f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3276868829864449892
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,8 +68,9 @@ GameObject:
   - component: {fileID: 6360063358438542649}
   - component: {fileID: 1087963524427807359}
   - component: {fileID: 7585857011600749590}
-  m_Layer: 7
-  m_Name: EA03_Environment_Rock_Head_01a_LOD1
+  - component: {fileID: 6603367062452816153}
+  m_Layer: 0
+  m_Name: Rock_State2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,6 +141,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6603367062452816153
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276868829864449892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d4fd32c3fd3334f429f4b01b3068c916, type: 3}
 --- !u!1 &7448968846783819370
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,8 +174,9 @@ GameObject:
   - component: {fileID: 2102684290252702943}
   - component: {fileID: 6099011410878106896}
   - component: {fileID: 2185002946209363955}
-  m_Layer: 7
-  m_Name: EA03_Environment_Rock_Head_01a_LOD0
+  - component: {fileID: 3899161135779657572}
+  m_Layer: 0
+  m_Name: Rock_State1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,6 +247,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3899161135779657572
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448968846783819370}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d4fd32c3fd3334f429f4b01b3068c916, type: 3}
 --- !u!1 &7767005060745536759
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,8 +281,8 @@ GameObject:
   - component: {fileID: 3332130553754338233}
   - component: {fileID: 2712517475768840096}
   - component: {fileID: 1154579299828709235}
-  m_Layer: 7
-  m_Name: EA03_Environment_Rock_Head_01a_LOD2
+  m_Layer: 0
+  m_Name: Rock_State3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +387,7 @@ GameObject:
   - component: {fileID: 1959304878590837561}
   - component: {fileID: 5736624271925901318}
   m_Layer: 7
-  m_Name: Coll
+  m_Name: InteractColl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

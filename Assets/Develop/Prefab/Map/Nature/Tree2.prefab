@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6028227622600661443}
   - component: {fileID: 8322224916478198831}
   - component: {fileID: 8656341733315727223}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Tree2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 4172546979493232214}
   - component: {fileID: 3448993559679471625}
   m_Layer: 7
-  m_Name: Coll
+  m_Name: InteractColl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
