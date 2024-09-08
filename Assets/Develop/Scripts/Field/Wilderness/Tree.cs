@@ -6,7 +6,7 @@ namespace CreatureGrove
     {
         public override void Interact()
         {
-
+            Debug.Log("Tree - Interact ½ÇÇà");
         }
     }
 }

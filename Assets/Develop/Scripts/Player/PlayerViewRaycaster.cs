@@ -8,6 +8,13 @@ namespace CreatureGrove
         private float maxDistance = 2f;
         public LayerMask layerMask;
 
+        private bool hasPressed = false;
+        public void ToggleButtonState()
+        {
+            hasPressed = !hasPressed;
+            Debug.Log("버튼 상태: " + hasPressed);
+        }
+
         private void Update()
         {
             Vector3 origin = transform.position;

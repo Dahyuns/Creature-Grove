@@ -25,12 +25,36 @@ namespace CreatureGrove
         private Vector3 tumbleDir;
         #endregion
 
+
+        #region [Interect]
+        private PlayerViewRaycaster ObCamera;
+
+        public void OnInteract(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                ObCamera.ToggleButtonState();
+                Debug.Log("버튼이 눌렸습니다.");
+            }
+            else // 버튼이 떼어졌을 때
+            {
+                ObCamera.ToggleButtonState();
+                Debug.Log("버튼이 떼어졌습니다.");
+            }
+        }
+        #endregion 
+
+
+        #region [Fire]
         // 참조
         private GameObject thisWeapon;
         private Weapon weapon;
 
         void Start()
         {
+            // 1인칭 카메라를 찾음!
+            ObCamera = GameObject.Find("Main Camera").GetComponent<PlayerViewRaycaster>();
+
             // 무기 태그를 가진 오브젝트를 찾음
             thisWeapon = GameObject.FindGameObjectWithTag(GameStrings.WeaponTag);
 
@@ -51,6 +75,7 @@ namespace CreatureGrove
         {
             weapon.fireProjectile();
         }
+        #endregion
 
         #region [Tumble]
 

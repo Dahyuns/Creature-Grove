@@ -8,6 +8,8 @@ namespace CreatureGrove
         public const string FirePoint = "FirePoint";
         public const string Inventory = "Inventory";
         public const string WeaponTag = "Weapon";
+        public const string InteractFun = "Interact";
+
 
     }
     
