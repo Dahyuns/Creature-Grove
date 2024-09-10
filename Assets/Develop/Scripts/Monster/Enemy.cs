@@ -26,6 +26,7 @@ namespace CreatureGrove
 
         // 공격력
         private float atkPower;
+        public float AtkPower { get { return atkPower; } }
 
         // 공격속도
         private float atkSpeed;
