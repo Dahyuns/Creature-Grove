@@ -17,19 +17,12 @@ namespace CreatureGrove
             get => hp;
         }
 
-        private float defenseHPThreshold;
+        private float healGauge = 2f;
 
         public bool IsMaxHp
         {
             get { return hp >= Maxhp; }
         }
-
-        // 공격력
-        private float atkPower;
-        public float AtkPower { get { return atkPower; } }
-
-        // 공격속도
-        private float atkSpeed;
 
         // 참조
         private GameObject thePlayer;
@@ -40,22 +33,21 @@ namespace CreatureGrove
             hp = Maxhp;
         }
 
-        void Update()
-        {
-        }
-
         #region
         private void Die()
         {
+            Debug.Log("enemy Died");
+
             // 죽는 애니메이션 재생
 
             // update 첫줄에 리턴? 또는 비활성화(아래)
             gameObject.SetActive(false);
         }
 
-        public void sHeal() // 스킬
+        public void Heal()
         {
-            hp += 10;
+            hp += healGauge;
+
             if (hp > Maxhp)
             {
                 hp = Maxhp;
@@ -63,7 +55,14 @@ namespace CreatureGrove
         }
         #endregion
 
-        // [IDamageManager]
+        #region [IDamageManager] 
+        // 공격력
+        private float atkPower;
+        public float AtkPower { get { return atkPower; } }
+
+        // 공격속도 (미사용 - 공격 타이머와 연동)
+        private float atkSpeed;
+
         public void Attack(IDamageManager target, float amount)
         {
             target.TakeDamage(amount);
@@ -71,9 +70,10 @@ namespace CreatureGrove
 
         public void TakeDamage(float amount)
         {
-            Debug.Log(hp);
+            GetComponent<EnemyBehavior>().SendMessage("DamageTimer", SendMessageOptions.RequireReceiver);
             if (hp - amount > 0)
             {
+
                 hp -= amount;
             }
             else
@@ -83,6 +83,8 @@ namespace CreatureGrove
                 // 죽음
                 Die();
             }
+            Debug.Log("enemy Hp : " + hp);
         }
+        #endregion
     }
 }
