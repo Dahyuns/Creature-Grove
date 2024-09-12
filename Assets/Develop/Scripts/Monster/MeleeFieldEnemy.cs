@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CreatureGrove
 {
-    public class MagicEnemy : Enemy
+    public class MeleeFieldEnemy : FieldEnemy
     {
         // Start is called before the first frame update
         void Start()

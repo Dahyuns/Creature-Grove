@@ -7,7 +7,7 @@ namespace CreatureGrove
         cudgel, stone // ¸ùµÕÀÌ, µ¹¸ÍÀÌ   ...   Ã¢°ú ¹æÆĞ, ÁöÆÎÀÌ(¸¶¹ı)
     }
 
-    public class Enemy : MonoBehaviour, IDamageManager
+    public class FieldEnemy : MonoBehaviour, IDamageManager
     {
         // Ã¼·Â
         private float Maxhp = 1000f;
@@ -70,7 +70,7 @@ namespace CreatureGrove
 
         public void TakeDamage(float amount)
         {
-            GetComponent<EnemyBehavior>().SendMessage("DamageTimer", SendMessageOptions.RequireReceiver);
+            GetComponent<FieldEnemyBehavior>().SendMessage("DamageTimer", SendMessageOptions.RequireReceiver);
             if (hp - amount > 0)
             {
 

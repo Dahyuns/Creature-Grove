@@ -10,11 +10,11 @@ namespace CreatureGrove
     }
 
     // 적의 구체적인 행동 패턴을 정의 ( AI, 움직임, 플레이어를 추적하는 방법 )
-    public class EnemyBehavior : MonoBehaviour
+    public class FieldEnemyBehavior : MonoBehaviour
     {
         // 참조
         private Player thePlayer;
-        private Enemy theEnemy;
+        private FieldEnemy theEnemy;
 
         // [상태]
         private EnemyState currentState;
@@ -137,7 +137,7 @@ namespace CreatureGrove
         {
             // 참조
             thePlayer = GameObject.Find("Player").GetComponent<Player>();
-            theEnemy = GetComponent<Enemy>();
+            theEnemy = GetComponent<FieldEnemy>();
 
             // 현재상태 "대기"로 설정
             currentState = EnemyState.Idle;
@@ -165,17 +165,6 @@ namespace CreatureGrove
                     {
                         SetState(EnemyState.Patroll);
                     }
-                    /*
-                    // 검색거리보다 멀때 "힐"
-                    else
-                    {
-                        // 만약 피가 깎였다면
-                        if (GetComponent<Enemy>().IsMaxHp == false)
-                        {
-                            currentState = EnemyState.Heal;
-                        }
-                    }
-                    */
                     break;
 
 
