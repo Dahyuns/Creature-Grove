@@ -77,10 +77,10 @@ GameObject:
   - component: {fileID: 517000874087663837}
   - component: {fileID: 8933636877157521079}
   - component: {fileID: 8634851617522309211}
-  - component: {fileID: 1886800656827714286}
-  - component: {fileID: 4581355230875506316}
+  - component: {fileID: 3110852482958854883}
+  - component: {fileID: 2448730683435845482}
   m_Layer: 0
-  m_Name: Dragonfly Arrow
+  m_Name: Wave Dragonfly Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1886800656827714286
+--- !u!114 &3110852482958854883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6843c6c3b4c04574094a32f33d413a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4581355230875506316
+--- !u!114 &2448730683435845482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,9 +168,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 560275960845651397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7878cff43c40a7f4ebd1890b4fbc025a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8abf3a0be7ef5074d98677e56924a3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchRadius: 20
 --- !u!1 &958685125759741105
 GameObject:
   m_ObjectHideFlags: 0
