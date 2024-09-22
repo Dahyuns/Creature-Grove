@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 5192139131527190769}
   - component: {fileID: 8657996857400150525}
   - component: {fileID: -1628276749719503547}
-  - component: {fileID: 613356960512261471}
+  - component: {fileID: 6661579443138595363}
   - component: {fileID: 5722313809079900375}
   m_Layer: 0
   m_Name: Wave mini skeleton 00
@@ -231,7 +231,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &613356960512261471
+--- !u!114 &6661579443138595363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1059228633815334016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6843c6c3b4c04574094a32f33d413a1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 592eeffb0eb8bc34cb2bd7a56b8dba13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5722313809079900375

@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 517000874087663837}
   - component: {fileID: 8933636877157521079}
   - component: {fileID: 8634851617522309211}
-  - component: {fileID: 3110852482958854883}
+  - component: {fileID: -2058549775751430267}
   - component: {fileID: 2448730683435845482}
   m_Layer: 0
   m_Name: Wave Dragonfly Arrow
@@ -147,7 +147,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3110852482958854883
+--- !u!114 &-2058549775751430267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 560275960845651397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6843c6c3b4c04574094a32f33d413a1b, type: 3}
+  m_Script: {fileID: 11500000, guid: f510e8e5218e6b6468ae12b9d8495201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2448730683435845482
