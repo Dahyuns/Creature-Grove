@@ -166,8 +166,8 @@ GameObject:
   m_Name: EA03_Environment_Rock_Head_01a_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &44622999761620367
 Transform:
@@ -250,8 +250,8 @@ GameObject:
   m_Name: EA03_Environment_Rock_Head_01a_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4662684825458576873
 Transform:
@@ -355,8 +355,8 @@ GameObject:
   m_Name: EA03_Environment_Rock_Head_01a_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8314670628627847748
 Transform:
