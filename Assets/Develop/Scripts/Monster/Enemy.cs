@@ -4,32 +4,35 @@ namespace CreatureGrove
 {
     public enum EnemyWeaponType
     {
-        cudgel, stone // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   ...   Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)
+        cudgel, stone // ¸ùµÕÀÌ, µ¹¸ÍÀÌ   ...   Ã¢°ú ¹æÆÐ, ÁöÆÎÀÌ(¸¶¹ý)
     }
 
     public class Enemy : MonoBehaviour, IDamageManager
     {
-        // Ã¼ï¿½ï¿½
-        protected virtual float Maxhp { get; set; } = 1000f;
+        // Ã¼·Â
+        protected virtual float Maxhp { get; } // »ó¼Ó(ÃÖ´ë Ã¼·Â)
         protected float currentHp { get; set; }
         public float HP { get => currentHp; }
 
+        // Ç®ÇÇÀÎ°¡?
         public bool IsMaxHp { get { return currentHp >= Maxhp; } }
 
+        // ´ÜÀ§ ½Ã°£´ç Èú °ÔÀÌÁö
         protected float healGauge { get => Maxhp / 500; }
 
-        protected bool isDeath = false;
-        public bool IsDeath { get { return isDeath; } }
+        // Death
+        protected bool isDead = false;
+        public bool IsDead { get { return isDead; } }
 
-        // ï¿½ï¿½ï¿½Ý·ï¿½
-        protected virtual float atkPower { get; set; } = 1f;
-        public float AtkPower { get { return atkPower; } }
+        // °ø°Ý·Â
+        public virtual float AtkPower { get; } // »ó¼Ó
 
-        // ï¿½ï¿½ï¿½Ý¼Óµï¿½ (ï¿½Ì»ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ì¸Ó¿ï¿½ ï¿½ï¿½ï¿½ï¿½)
-        protected virtual float atkSpeed { get; set; } = 1f;
+        // °ø°Ý¼Óµµ (¹Ì»ç¿ë - °ø°Ý Å¸ÀÌ¸Ó¿Í ¿¬µ¿)
+        protected virtual float AtkSpeed { get; } // »ó¼Ó
 
-        // ï¿½ï¿½ï¿½ï¿½
+        // ÂüÁ¶
         protected GameObject thePlayer;
+        protected Animator animator;
 
         // animation strings
         protected string DamagedTrigger = "Damaged";
@@ -37,8 +40,9 @@ namespace CreatureGrove
 
         protected void Awake()
         {
-            // ï¿½ï¿½ï¿½ï¿½
+            // ÂüÁ¶
             thePlayer = GameObject.Find("Player");
+            animator = GetComponent<Animator>();
 
             currentHp = Maxhp;
         }
@@ -57,12 +61,13 @@ namespace CreatureGrove
         {
             Debug.Log("enemy Died");
 
-            // ï¿½×´ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ ï¿½ß°ï¿½?
+            // Á×´Â ¾Ö´Ï¸ÞÀÌ¼Ç Àç»ý
+            animator.SetTrigger(DieTrigger);
+            // µðÁ¹ºê È¿°ú Ãß°¡?
 
-            // [   ] 1. ï¿½ï¿½ï¿½ï¿½     // Destroy(gameObject, destoryDelay);
-            // [   ] 2. ï¿½ï¿½È°ï¿½ï¿½È­(ï¿½Æ·ï¿½)
-            // [ V ] 3. ï¿½Ö´Ï¸ï¿½ï¿½Ì¼Ç¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ underï¿½ï¿½ ï¿½ï¿½Ä¡
+            // [   ] 1. »èÁ¦     // Destroy(gameObject, destoryDelay);
+            // [   ] 2. ºñÈ°¼ºÈ­(¾Æ·¡)
+            // [ V ] 3. ¾Ö´Ï¸ÞÀÌ¼Ç¿¡¼­ ¼³Á¤ÇÏ¿© under¿¡ À§Ä¡
         }
 
         #region [IDamageManager] 
@@ -77,14 +82,15 @@ namespace CreatureGrove
             if (currentHp - amount > 0)
             {
                 currentHp -= amount;
+                animator.SetTrigger(DamagedTrigger);
             }
             else
             {
                 currentHp = 0;
 
-                // ï¿½ï¿½ï¿½ï¿½
+                // Á×À½
                 Die();
-                isDeath = true;
+                isDead = true;
             }
             Debug.Log("enemy Hp : " + currentHp);
         }

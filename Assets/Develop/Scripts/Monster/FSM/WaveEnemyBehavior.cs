@@ -67,6 +67,9 @@ namespace CreatureGrove
                 // [검색 : 가까운 마을 오브젝트 찾기]
                 case EnemyState.Search:
 
+                    // 가만히 있는 애니메이션 설정
+                    animator.SetInteger(SpeedLevel, 0); // 0 : Idle
+
                     // 검색
                     FindNearestObject();
 
@@ -92,6 +95,9 @@ namespace CreatureGrove
                     // 목표를 향해 걷기
                     eChase();
 
+                    // 뛰는 애니메이션 설정
+                    animator.SetInteger(SpeedLevel, 2); // 2 : 뛰기
+
                     // 체력 : 1/3 보다 많으면 "공격"
                     if (theEnemy.HP >= LowHealthThreshold)
                     {
@@ -116,8 +122,20 @@ namespace CreatureGrove
                     // 추격 거리보다 작다면 계속 "도망"
                     if (distanceToTarget < chaseStartDistance)
                     {
+                        // 처음 도망치는 순간에만 반대방향 구하기
+                        if (isRun == false)
+                        {
+                            isRun = true;
+
+                            // 현재 바라보는 방향에서 (XZ 평면상) 반대 방향 구하기
+                            oppositeDir = new Vector3(-(transform.forward).x, (transform.forward).y, -(transform.forward).z);
+                        }
+
                         // 도망가기(일단 보는 방향 반대방향으로 일자 도망, 좌우는 추가 구현)
                         eRun();
+
+                        // 뛰는 애니메이션 설정
+                        animator.SetInteger(SpeedLevel, 2); // 2 : 뛰기
 
                         // HP가 2/3보다 많다면 다시 추격하기
                         if (theEnemy.HP <= MidHealthThreshold)
