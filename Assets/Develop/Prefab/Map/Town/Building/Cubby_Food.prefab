@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7306376395615814000}
   - component: {fileID: 4242557725181477659}
   - component: {fileID: 3069001463167974897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_Cubby_01d_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,8 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8417874742989759093}
   - component: {fileID: 2265194360196695652}
-  m_Layer: 0
-  m_Name: Cubby(Food)
+  m_Layer: 6
+  m_Name: Cubby_Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950610449803722722}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 8146637022819693823}
   - component: {fileID: 1869499756431404433}
   - component: {fileID: 2096050276658148494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_Cubby_01d_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 207757315575065595}
   - component: {fileID: 2334203875667158196}
   - component: {fileID: 6366538070873447591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_Cubby_01d_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7524727645847494325}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4192638336373025689}
   - component: {fileID: 2788400058957260314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 94656883923391553}
   - component: {fileID: 4037863124233463792}
   - component: {fileID: 3461455417689140096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_Cubby_01d_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7736166458955737775}
   - component: {fileID: 6453742836597010327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4618169255530382703}
   - component: {fileID: 4065080976580059652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9070950963237440104}
   - component: {fileID: 7914687874703125063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 143988, guid: 6fd54acd041ece64482dd792ac729572, type: 3}
       propertyPath: m_Name
       value: Sack_b
+      objectReference: {fileID: 0}
+    - target: {fileID: 143988, guid: 6fd54acd041ece64482dd792ac729572, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 435634, guid: 6fd54acd041ece64482dd792ac729572, type: 3}
       propertyPath: m_LocalPosition.x
@@ -790,6 +794,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FruitPlum
       objectReference: {fileID: 0}
+    - target: {fileID: 791448342727761573, guid: eea1cd6425d6a87439e8bf3b15fa7164,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -812,6 +821,10 @@ PrefabInstance:
     - target: {fileID: 165756, guid: 96af99dc9638b2040ad65b33d80e5ec7, type: 3}
       propertyPath: m_Name
       value: Sack_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 165756, guid: 96af99dc9638b2040ad65b33d80e5ec7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 415948, guid: 96af99dc9638b2040ad65b33d80e5ec7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -876,6 +889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FruitAppleRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315485550417262594, guid: 7d945a95acf61ca4e91cfac3240b4f7a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8659677303442498232, guid: 7d945a95acf61ca4e91cfac3240b4f7a,
         type: 3}
@@ -1001,6 +1019,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FruitBanana
       objectReference: {fileID: 0}
+    - target: {fileID: 6691648094378223677, guid: 395095c927a770a4ab519a64a649f132,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1024,6 +1047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FishGreen3
+      objectReference: {fileID: 0}
+    - target: {fileID: 21553111756267199, guid: 7a729db89b4edbf489ac4c6db45e35be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 794677373939811333, guid: 7a729db89b4edbf489ac4c6db45e35be,
         type: 3}
@@ -1098,6 +1126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FishGreen1
+      objectReference: {fileID: 0}
+    - target: {fileID: 97646373815675038, guid: f9863e07075bb1f43956a6036ba9a0c6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 725423070991561252, guid: f9863e07075bb1f43956a6036ba9a0c6,
         type: 3}
@@ -1223,6 +1256,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FruitWatermellon
       objectReference: {fileID: 0}
+    - target: {fileID: 9085871778310183888, guid: b21018cc9891dd844b36d1cadecd22fb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1297,6 +1335,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishRed1
       objectReference: {fileID: 0}
+    - target: {fileID: 7770101499030718229, guid: 085816f3febf8f24ab99a3c73f7a264e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1320,6 +1363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FruitOrange
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018759058997402146, guid: bd17bbbc33831fc4bb0be63566b71891,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6398838631381074072, guid: bd17bbbc33831fc4bb0be63566b71891,
         type: 3}
@@ -1445,6 +1493,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FruitAppleGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 6812260470818135548, guid: e2148f74ae0f7ec4db0b1acc9eab49a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1467,6 +1520,10 @@ PrefabInstance:
     - target: {fileID: 139564, guid: f7967af397df22847975f89c8e017716, type: 3}
       propertyPath: m_Name
       value: Bucket
+      objectReference: {fileID: 0}
+    - target: {fileID: 139564, guid: f7967af397df22847975f89c8e017716, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 453354, guid: f7967af397df22847975f89c8e017716, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1527,9 +1584,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8417874742989759093}
     m_Modifications:
+    - target: {fileID: 1036648405561320, guid: 6aec5bac406a2d044ae41b2b1ef23ffd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171859356251336, guid: 6aec5bac406a2d044ae41b2b1ef23ffd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1195863253874382, guid: 6aec5bac406a2d044ae41b2b1ef23ffd, type: 3}
       propertyPath: m_Name
       value: EA03_Village_AnimalBreeding_Hovel_01a_PRE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195863253874382, guid: 6aec5bac406a2d044ae41b2b1ef23ffd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245080606657024, guid: 6aec5bac406a2d044ae41b2b1ef23ffd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635797766605526, guid: 6aec5bac406a2d044ae41b2b1ef23ffd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828629486878764, guid: 6aec5bac406a2d044ae41b2b1ef23ffd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4992163595705294, guid: 6aec5bac406a2d044ae41b2b1ef23ffd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1594,6 +1675,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FishRed2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521280450715036109, guid: 6b9c38a36d3782f4c95f8a8417e70bb7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3005787278387835767, guid: 6b9c38a36d3782f4c95f8a8417e70bb7,
         type: 3}
@@ -1719,6 +1805,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishGreen2
       objectReference: {fileID: 0}
+    - target: {fileID: 5514361624845663107, guid: 20d3c4a59e8509a41922d7853f318e9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1793,6 +1884,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FruitWatermellonHalf
       objectReference: {fileID: 0}
+    - target: {fileID: 8070278736613038624, guid: c8021ed001c04754fb6d7d963e521443,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1816,6 +1912,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FishRed3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614231483479009613, guid: c57b149671f71d444b23c5d828c4f1b1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2102396351910573047, guid: c57b149671f71d444b23c5d828c4f1b1,
         type: 3}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3207820390914412952}
   - component: {fileID: 8921114251713764342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PentHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 4206907444753918454}
   - component: {fileID: 6949759296402430382}
   - component: {fileID: 963012787577214979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_PentHouse_01a_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3756278492305003329}
   - component: {fileID: 8847585533926397630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925473383823205025}
   - component: {fileID: 9155045551085186934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: we
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 6505003929769359287}
   - component: {fileID: 377354012385972590}
   - component: {fileID: 9200330247842456144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_PentHouse_01a_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 8141749280786707734}
   - component: {fileID: 2137200224276027028}
   - component: {fileID: 5715905892017707814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_PentHouse_01a_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3347728422682506768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 5676864124131344077}
   - component: {fileID: 6752154847276125709}
   - component: {fileID: 2934466439214806497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_PentHouse_01a_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2810258303036941457}
   - component: {fileID: 2091650675186681522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3460135561757790172}
   - component: {fileID: 7989209632222117944}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: we (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3158984811312420608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: From Nature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,6 +760,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8281770850062388857, guid: 1c639f495d926094e8fc0ca59c3ddd38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8281770850062388859, guid: 1c639f495d926094e8fc0ca59c3ddd38,
         type: 3}
       propertyPath: m_Name
@@ -767,8 +772,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8281770850062388859, guid: 1c639f495d926094e8fc0ca59c3ddd38,
         type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281770850062388859, guid: 1c639f495d926094e8fc0ca59c3ddd38,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281770850062388861, guid: 1c639f495d926094e8fc0ca59c3ddd38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281770850062388863, guid: 1c639f495d926094e8fc0ca59c3ddd38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -796,8 +816,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 420602401471014848, guid: 4df4404ab98a710418365b053d8d6c55,
         type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 420602401471014848, guid: 4df4404ab98a710418365b053d8d6c55,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420602401471014850, guid: 4df4404ab98a710418365b053d8d6c55,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 420602401471014852, guid: 4df4404ab98a710418365b053d8d6c55,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 420602401471014854, guid: 4df4404ab98a710418365b053d8d6c55,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 420602401471118304, guid: 4df4404ab98a710418365b053d8d6c55,
         type: 3}
@@ -893,6 +933,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2730145364450776267, guid: d9fc690e52a26ad45947b8b0dbc5f2bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3362143911151980145, guid: d9fc690e52a26ad45947b8b0dbc5f2bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -965,6 +1010,10 @@ PrefabInstance:
     - target: {fileID: 199954, guid: 1302c983138d8344f81486021c92aa98, type: 3}
       propertyPath: m_Name
       value: Logs_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 199954, guid: 1302c983138d8344f81486021c92aa98, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 461458, guid: 1302c983138d8344f81486021c92aa98, type: 3}
       propertyPath: m_LocalScale.x
@@ -1042,6 +1091,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree 3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 273301760398536112, guid: f2727472b344747408ea8dfb42ce1873,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 612812996124309258, guid: f2727472b344747408ea8dfb42ce1873,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1116,6 +1170,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree 2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2730145364450776267, guid: d9fc690e52a26ad45947b8b0dbc5f2bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3362143911151980145, guid: d9fc690e52a26ad45947b8b0dbc5f2bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1189,6 +1248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Logs_b
       objectReference: {fileID: 0}
+    - target: {fileID: 155810, guid: 737f000fba6aa60458d3ec61cb22fcc3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 406896, guid: 737f000fba6aa60458d3ec61cb22fcc3, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25
@@ -1260,10 +1323,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3158984811312420608}
     m_Modifications:
+    - target: {fileID: 2279338559147194596, guid: 1d92f26bf55fcc24583880399688e793,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5246660610424533593, guid: 1d92f26bf55fcc24583880399688e793,
         type: 3}
       propertyPath: m_Name
       value: EA03_Environment_Rock_Flat_04c_PRE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246660610424533593, guid: 1d92f26bf55fcc24583880399688e793,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692940074094341951, guid: 1d92f26bf55fcc24583880399688e793,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145081703365403837, guid: 1d92f26bf55fcc24583880399688e793,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9121121707941527626, guid: 1d92f26bf55fcc24583880399688e793,
         type: 3}

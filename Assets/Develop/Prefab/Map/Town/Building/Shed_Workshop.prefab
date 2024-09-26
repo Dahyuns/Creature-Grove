@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8516938091510250545}
   - component: {fileID: 9169836267622984385}
   - component: {fileID: 255600047107092759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_Shed_03b_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4688484114379160266}
   - component: {fileID: 6315201056129036178}
   - component: {fileID: 8418061083536025166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_Shed_03b_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,8 +176,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4544639876238503524}
   - component: {fileID: 4023870487052941123}
-  m_Layer: 0
-  m_Name: Shed(Workshop)
+  m_Layer: 6
+  m_Name: Shed_Workshop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 405515066394175224}
   - component: {fileID: 1777940896825189593}
   - component: {fileID: 7109393316977332358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_Shed_03b_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 7291362708903473610}
   - component: {fileID: 2958882537018433979}
   - component: {fileID: 8231703284473084906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_OutBuilding_Shed_03b_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,6 +411,10 @@ PrefabInstance:
     - target: {fileID: 136986, guid: b2e054983935ebc4c959a2513ac649dc, type: 3}
       propertyPath: m_Name
       value: Sign_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 136986, guid: b2e054983935ebc4c959a2513ac649dc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 459204, guid: b2e054983935ebc4c959a2513ac649dc, type: 3}
       propertyPath: m_LocalScale.x

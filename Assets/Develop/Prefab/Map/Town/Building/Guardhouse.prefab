@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2014089496578619600}
   - component: {fileID: 6268416412962097337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RotatedCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6536841278452794104}
   - component: {fileID: 7835994865454439350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RotatedCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 3827762544663869339}
   - component: {fileID: 4734023503884246481}
   - component: {fileID: 4146895527678235591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 9013358662880861876}
   - component: {fileID: 6600134421614266907}
   - component: {fileID: 4966893540832085195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_Tover_01a_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3124072716929265057}
   - component: {fileID: 2349408329836161327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RotatedCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2795614814662831589}
   - component: {fileID: 3807107091034778302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Guardhouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690266600972674005}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 69.46, y: 0, z: 60.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -399,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4682826131813999052}
   - component: {fileID: 1066885091595639094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RotatedCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 6389063262212651524}
   - component: {fileID: 8643991290730202010}
   - component: {fileID: 8769658562060402199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_Tover_01a_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 8463812577176557587}
   - component: {fileID: 4959506333390920943}
   - component: {fileID: 1601493314455887995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_Tover_01a_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 992236771747284927}
   - component: {fileID: 4361250127564754712}
   - component: {fileID: 8281700112894762370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EA03_Village_Tover_01a_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,6 +10,19 @@ namespace CreatureGrove
         public const string WeaponTag = "Weapon";
         public const string InteractFun = "Interact";
 
+        // 건물 이름
+        public const string BuildingAdministrative = "Administrative";
+        public const string BuildingCubbyFood = "Cubby_Food";
+        public const string BuildingCubbyRock = "Cubby_Rock";
+        public const string BuildingCubbyWood = "Cubby_Wood";
+        public const string BuildingFarm = "Farm";
+        public const string BuildingGuardhouse = "Guardhouse";
+        public const string BuildingHouse = "House";
+        public const string BuildingMarketPlace = "MarketPlace";
+        public const string BuildingPentHouse = "PentHouse";
+        public const string BuildingShed = "Shed_Workshop";
+
+
 
     }
     
