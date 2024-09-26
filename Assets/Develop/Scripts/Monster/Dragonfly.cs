@@ -3,12 +3,15 @@ namespace CreatureGrove
     public class Dragonfly : Enemy
     {
         // 최대 체력
-        protected override float Maxhp { get; set; } = 1000f;
+        private float maxHp = 10000f;
+        protected override float Maxhp { get { return maxHp; } }
 
         // 공격력
-        protected override float atkPower { get; set; } = 1f;
+        private float atkPower = 10;
+        public override float AtkPower { get { return atkPower; } }
 
         // 공격속도 (미사용 - 공격 타이머와 연동)
-        protected override float atkSpeed { get; set; } = 1f;
+        private float atkSpeed = 1;
+        protected override float AtkSpeed { get { return atkSpeed; } }
     }
 }
