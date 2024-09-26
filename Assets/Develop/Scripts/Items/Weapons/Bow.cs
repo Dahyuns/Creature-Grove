@@ -21,16 +21,9 @@ namespace CreatureGrove
 
         [SerializeField] private GameObject bowBullet;
         [SerializeField] private GameObject bowBEffect;
-        private Transform firePoint;
 
         protected override GameObject Bullet() { return bowBullet; }
         protected override GameObject BulletEffect() { return bowBEffect; }
-        protected override Transform FirePoint() { return firePoint; }
-
-        void Awake()
-        {
-            firePoint = transform.Find(GameStrings.FirePoint);
-        }
 
         void ResetGame()
         {

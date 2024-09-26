@@ -44,15 +44,22 @@ namespace CreatureGrove
         // 참조 , null 넣지말기, null 체크하기
         protected virtual GameObject Bullet() { return tmpObject; }
         protected virtual GameObject BulletEffect() { return tmpObject; }
-        protected virtual Transform FirePoint() { return tmpObject.transform; }
+        protected virtual Transform FirePoint() { return firePoint; }
         protected GameObject parent {  get { return Utils.GetRootParent(transform); } }
-        public GameObject nullObject;
+        protected GameObject bullets;
+        protected Transform firePoint;
+
+        private void Awake()
+        {
+            bullets = GameObject.Find("Bullets");
+            firePoint = transform.Find(GameStrings.FirePoint);
+        }
 
 
         // 발사체 발사
         public void fireProjectile()
         {
-            Bullet blt = Instantiate(Bullet(), nullObject.transform, false).GetComponent<Bullet>();
+            Bullet blt = Instantiate(Bullet()).GetComponent<Bullet>(); //, bullets.transform, false
             blt.ConfigureAndShoot(FirePoint(), parent, effectiveAtkPower());
 
             if (blt != null)
