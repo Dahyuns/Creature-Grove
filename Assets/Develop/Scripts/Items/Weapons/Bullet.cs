@@ -5,9 +5,9 @@ namespace CreatureGrove
     public class Bullet : MonoBehaviour
     {
         // 추가? : 오브젝트 풀링
-
-        private float speed = 0.5f;
-        private float damage = 0f;
+        [SerializeField] private float speed = 300f;
+        [SerializeField] private float massValue = 0.1f;
+        private float damage;
 
         private IDamageManager shooter;
 
@@ -29,8 +29,11 @@ namespace CreatureGrove
 
         void SetMove()
         {
-            GetComponent<Rigidbody>().AddForce(transform.forward * speed);
-            Destroy(gameObject, 5f);
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.mass = massValue;
+            rb.AddForce(transform.forward * speed);
+
+            Destroy(gameObject,10f);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -51,6 +54,8 @@ namespace CreatureGrove
                     Debug.Log("플레이어 데미지");
                 }
             }
+
+            Destroy(gameObject);
         }
     }
 }
