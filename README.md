@@ -13,10 +13,21 @@ Creature Grove
 |개발 인원|1인 개발|
 |게임 영상|[Youtube](https://www.youtube.com/)|
 
-## 개발일지
+## 개발일지 (미작성)
+
+|Section|Description|Blog Link|
+|:---|:---|:---|
+|인터페이스 구성, 플레이어와 무기 생성||[Tistory 링크](https://dev-dahyun.tistory.com/25)|
+|상호작용 오브젝트 랜덤 생성|좌표로 영역구분하여 오브젝트 생성|[Tistory 링크](https://dev-dahyun.tistory.com/54)|
+|아이템 json 활용 제작, 인벤토리 생성||[Tistory 링크](https://dev-dahyun.tistory.com/55)|
+|Enemy AI(1)|FSM을 활용하여 제작한 일반 몬스터 AI|[Tistory 링크](https://dev-dahyun.tistory.com/64)|
+|Enemy AI(2)|Animation 연결|[Tistory 링크](https://dev-dahyun.tistory.com/65)|
+|건물 업그레이드, 상호작용 기능||[Tistory 링크](https://dev-dahyun.tistory.com/66)|
+|상호작용 오브젝트||[Tistory 링크](https://dev-dahyun.tistory.com/67)|
+|프로젝트 회고|프로젝트를 진행하며 느낀 점과 개선점|[Tistory 링크](https://dev-dahyun.tistory.com/69)|
 
 <details>
-<summary>OPEN</summary>
+<summary>open(개발기간 및 내용)</summary>
   
 |Duration|Goal|Status(☐☑)|
 |:---|:---|:---:|
