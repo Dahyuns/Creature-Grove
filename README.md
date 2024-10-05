@@ -62,6 +62,7 @@ Creature Grove
 
 ## 플레이화면
 
+## 관련 이미지 모음
 ### 다이어그램
 ![다이어그램](https://github.com/user-attachments/assets/4a2e30b3-a1d9-45c3-94ec-3fa75972a295)
 
