@@ -63,11 +63,11 @@ Creature Grove
 ## 플레이화면
 
 ## 관련 이미지 모음
-### 다이어그램
+### <다이어그램>
 ![다이어그램](https://github.com/user-attachments/assets/4a2e30b3-a1d9-45c3-94ec-3fa75972a295)
 
-### 인터페이스 표
+### <인터페이스 표>
 ![image](https://github.com/user-attachments/assets/85f022a9-6394-4d60-b210-3d30c80759ba)
 
-### AI 
+### <AI>
 
