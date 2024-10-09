@@ -11,7 +11,7 @@ Creature Grove
 |게임 장르|서바이벌, TPS|
 |개발 기간|2024.07.14 ~ 개발중|
 |개발 인원|1인 개발|
-|게임 영상|[Youtube](https://www.youtube.com/)|
+|주 사용 기술|FSM, AI Navigation|
 
 ## 개발일지 (미작성)
 
